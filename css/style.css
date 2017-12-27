@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none; }
+
+body {
+  font-family: 'Lato', sans-serif; }
+
+section h2 {
+  position: relative;
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center; }
+  section h2:before, section h2:after {
+    margin: 30px auto;
+    display: block;
+    width: 105px;
+    content: ""; }
+  section h2:before {
+    border-bottom: 3px #dc0000 solid; }
+  section h2:after {
+    border-top: 3px red solid; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px; }
+
+.top-menu {
+  position: fixed;
+  width: 100%;
+  display: inline-flex;
+  z-index: 99;
+  justify-content: space-between;
+  height: 90px; }
+  .top-menu > a {
+    align-self: center;
+    margin-left: 35px; }
+
+#menu {
+  align-self: center; }
+  #menu ul {
+    font-family: 'Open-Sans', sans-serif;
+    font-size: 18px; }
+    #menu ul li {
+      display: inline-block;
+      margin-right: 35px; }
+      #menu ul li a {
+        color: white; }
+
+.mainHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 90px;
+  height: 100vh;
+  background-image: url("../img/slider1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white; }
+  .mainHeader ul {
+    position: absolute;
+    margin-bottom: 60px;
+    bottom: 0; }
+    .mainHeader ul li {
+      margin: 0 5px;
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border: 1px white solid;
+      border-radius: 50%; }
+      .mainHeader ul li.active {
+        background-color: white; }
+
+.mainHeader__slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .mainHeader__slider h2 {
+    font-size: 60px;
+    padding: 30px; }
+  .mainHeader__slider h3 {
+    font-family: 'Open-Sans', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase; }
+    .mainHeader__slider h3.above {
+      letter-spacing: 10px; }
+  .mainHeader__slider > a {
+    border: 2px white solid;
+    margin-top: 30px;
+    padding: 20px 50px;
+    color: white;
+    font-weight: 900; }
+    .mainHeader__slider > a:hover {
+      background-color: rgba(232, 232, 232, 0.3); }
+
+.latestProducts_collections, .latestProducts__currentSales {
+  display: flex; }
+
+.latestProducts a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open-Sans', sans-serif;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white; }
+
+.latestProducts__product {
+  margin: 15px;
+  padding: 30px;
+  height: 418px;
+  width: 370px;
+  box-sizing: border-box; }
+  .latestProducts__product.man-collection {
+    background-image: url("../img/man.jpg");
+    background-repeat: no-repeat; }
+  .latestProducts__product.woman-collection {
+    background-image: url("../img/woman.jpg");
+    background-repeat: no-repeat; }
+  .latestProducts__product.watches-collection {
+    background-image: url("../img/watch.jpg");
+    background-repeat: no-repeat; }
+  .latestProducts__product .innerBorder {
+    height: 100%;
+    border: 1px red solid; }
+
+.latestProducts__sales {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  height: 418px;
+  width: 570px;
+  box-sizing: border-box; }
+  .latestProducts__sales.autumn-collection {
+    background-image: url("../img/autumn.jpg");
+    background-repeat: no-repeat; }
+  .latestProducts__sales.spirit-collection {
+    background-image: url("../img/spring.jpg");
+    background-repeat: no-repeat; }

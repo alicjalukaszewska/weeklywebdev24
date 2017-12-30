@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none; }
@@ -9,6 +13,8 @@ body {
   color: #777777;
   font-family: 'Lato', sans-serif;
   font-size: 18px; }
+  body p {
+    letter-spacing: 2px; }
   body section {
     margin-bottom: 60px; }
     body section .container {
@@ -18,7 +24,7 @@ body {
 section h2 {
   padding: 30px 0;
   color: #333333;
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-style: italic;
   font-size: 40px;
@@ -47,7 +53,7 @@ section h2 {
 #menu {
   align-self: center; }
   #menu ul {
-    font-family: 'Open-Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px; }
     #menu ul li {
       display: inline-block;
@@ -88,7 +94,7 @@ section h2 {
     font-size: 60px;
     padding: 30px; }
   .mainHeader__slider h3 {
-    font-family: 'Open-Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 30px;
     text-transform: uppercase; }
@@ -117,7 +123,7 @@ section h2 {
     display: flex;
     width: 100%;
     height: 100%;
-    font-family: 'Open-Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 40px;
     text-align: center;
@@ -179,8 +185,7 @@ section h2 {
   padding-bottom: 60px; }
   .trendingItems a {
     color: #333333;
-    font-family: 'Open-Sans', sans-serif;
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase; }
   .trendingItems__item {
     display: flex; }
@@ -195,7 +200,7 @@ section h2 {
     font-weight: 700;
     margin: 30px 0; }
   .trendingItems__details h4 {
-    font-family: 'Open-Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 18px; }
     .trendingItems__details h4:after {

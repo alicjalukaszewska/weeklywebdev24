@@ -1,14 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   list-style: none;
   text-decoration: none; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  color: #777777;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px; }
+  body section {
+    margin-bottom: 60px; }
+    body section .container {
+      margin: 0 auto;
+      max-width: 1170px; }
 
 section h2 {
-  position: relative;
+  padding: 30px 0;
+  color: #333333;
   font-family: 'Open-Sans', sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -23,10 +32,6 @@ section h2 {
     border-bottom: 3px #dc0000 solid; }
   section h2:after {
     border-top: 3px red solid; }
-
-.container {
-  margin: 0 auto;
-  max-width: 1170px; }
 
 .top-menu {
   position: fixed;
@@ -99,19 +104,8 @@ section h2 {
       background-color: rgba(232, 232, 232, 0.3); }
 
 .latestProducts_collections, .latestProducts__currentSales {
-  display: flex; }
-
-.latestProducts a {
   display: flex;
-  width: 100%;
-  height: 100%;
-  font-family: 'Open-Sans', sans-serif;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: white; }
+  justify-content: center; }
 
 .latestProducts__product {
   margin: 15px;
@@ -119,29 +113,129 @@ section h2 {
   height: 418px;
   width: 370px;
   box-sizing: border-box; }
+  .latestProducts__product a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open-Sans', sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white; }
   .latestProducts__product.man-collection {
-    background-image: url("../img/man.jpg");
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/man.jpg");
     background-repeat: no-repeat; }
   .latestProducts__product.woman-collection {
-    background-image: url("../img/woman.jpg");
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/woman.jpg");
     background-repeat: no-repeat; }
   .latestProducts__product.watches-collection {
-    background-image: url("../img/watch.jpg");
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/watch.jpg");
     background-repeat: no-repeat; }
   .latestProducts__product .innerBorder {
     height: 100%;
-    border: 1px red solid; }
+    border: 1px white solid; }
 
 .latestProducts__sales {
+  margin: 15px 15px 0 15px;
   display: flex;
   justify-content: center;
-  margin: 15px;
+  align-items: center;
   height: 418px;
   width: 570px;
   box-sizing: border-box; }
+  .latestProducts__sales a {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 45px;
+    font-style: normal; }
+    .latestProducts__sales a:before, .latestProducts__sales a:after {
+      margin: 30px auto;
+      display: block;
+      width: 105px;
+      content: ""; }
+    .latestProducts__sales a:before {
+      border-bottom: 1px white solid; }
+    .latestProducts__sales a:after {
+      border-top: 1px white solid; }
   .latestProducts__sales.autumn-collection {
-    background-image: url("../img/autumn.jpg");
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/autumn.jpg");
     background-repeat: no-repeat; }
   .latestProducts__sales.spirit-collection {
-    background-image: url("../img/spring.jpg");
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/spirit.jpg");
     background-repeat: no-repeat; }
+
+.trendingItems {
+  background-image: url("../img/itemsbg.jpg");
+  padding-bottom: 60px; }
+  .trendingItems a {
+    color: #333333;
+    font-family: 'Open-Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .trendingItems__item {
+    display: flex; }
+    .trendingItems__item img {
+      height: 570px;
+      margin-right: 30px; }
+  .trendingItems__details h3 {
+    color: #dc0000;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 30px 0; }
+  .trendingItems__details h4 {
+    font-family: 'Open-Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px; }
+    .trendingItems__details h4:after {
+      margin: 30px 0;
+      content: "";
+      width: 30px;
+      display: block;
+      border-top: 1px black solid; }
+  .trendingItems__details p.tip {
+    padding-top: 35px; }
+  .trendingItems__details > a {
+    margin-right: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 170px;
+    border-style: solid;
+    border-color: #333333 #aeaeae;
+    border-width: 1px; }
+    .trendingItems__details > a:hover, .trendingItems__details > a:focus {
+      background-color: #333333;
+      color: #ffffff; }
+  .trendingItems__details ul.trendingItems__sizes {
+    margin: 95px 0 30px; }
+    .trendingItems__details ul.trendingItems__sizes li {
+      margin-right: 30px;
+      display: inline-block;
+      height: 50px;
+      width: 70px;
+      border-style: solid;
+      border-color: #333333 #aeaeae;
+      border-width: 1px; }
+      .trendingItems__details ul.trendingItems__sizes li a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%; }
+      .trendingItems__details ul.trendingItems__sizes li.active {
+        background-color: #333333; }
+        .trendingItems__details ul.trendingItems__sizes li.active a {
+          color: #ffffff; }

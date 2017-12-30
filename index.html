@@ -84,60 +84,70 @@
 					<a href="#">Size guide</a>
 				</article>
 			</div>
-			<ul>
+			<ul class="chooseItem">
 				<li><a href="#"></a></li>
 				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
+				<li class="active"><a href="#"></a></li>
 				<li><a href="#"></a></li>
 			</ul>
 		</section>
 		<section class="fromBlog">
 			<h2>From The Blog</h2>
-			<article class="fromBlog__item">
-				<header>
-					<img class="fromBlog__image" src="" alt="">
-					<h3 class="fromBlog__title">
-						<a href="">German Fashion Wizards</a>
-					</h3>
-					<section class="fromBlog__info">
-						<p class="fromBlog__author">By James Steed</p>
-						<p class="fromBlog__category">Fashion</p>
-					</section>
-				</header>
-				<div class="fromBlog__text">
-					<p>
-						This week we had the chance of interviewing two creative artists from Germany. These guys are simply amazing at what they do with the European fashion scene and this year at Paris Fashion Week they introduced their new collection. 
-					</p>
-				</div>
-				<footer>
-					<a href="#">Read more</a>
-				</footer>
-			</article>
-					<article class="fromBlog__item">
-				<header>
-					<img class="fromBlog__image" src="" alt="">
-					<h3 class="fromBlog__title">
-						<a href="">Anne Stewart's Sunglasses</a>
-					</h3>
-					<section class="fromBlog__info">
-						<p class="fromBlog__author">By Marry Beard</p>
-						<p class="fromBlog__category">Trending</p>
-					</section>
-				</header>
-				<div class="fromBlog__text">
-					<p>
-						Just amazing! That is how i can describe this person. So creative,so inspiring. I was watching her create in her small studio in London and i was amazed at how every little detail gets included in her creaions. From frames,to glass thickness she blew me away...
-					</p>
-				</div>
-				<footer>
-					<a href="#">Read more</a>
-				</footer>
-			</article>
+			<div class="fromBlog__blog container">
+				<article class="fromBlog__item">
+					<header>
+						<img class="fromBlog__image" src="../img/wizards.jpg" alt="">
+						<h3 class="fromBlog__title">
+							<a href="">German Fashion Wizards</a>
+						</h3>
+						<section class="fromBlog__info">
+							<p class="fromBlog__info__author">James Steed</p>
+							<p class="fromBlog__info__category">Fashion</p>
+						</section>
+					</header>
+					<div class="fromBlog__text">
+						<p>
+							This week we had the chance of interviewing two creative artists from Germany. These guys are simply amazing at what they do with the European fashion scene and this year at Paris Fashion Week they introduced their new collection. 
+						</p>
+					</div>
+					<footer>
+						<a href="#">Read more</a>
+					</footer>
+				</article>
+						<article class="fromBlog__item">
+					<header>
+						<img class="fromBlog__image" src="../img/glasses.jpg" alt="">
+						<h3 class="fromBlog__title">
+							<a href="">Anne Stewart's Sunglasses</a>
+						</h3>
+						<section class="fromBlog__info">
+							<p class="fromBlog__author">By Marry Beard</p>
+							<p class="fromBlog__category">Trending</p>
+						</section>
+					</header>
+					<div class="fromBlog__text">
+						<p>
+							Just amazing! That is how i can describe this person. So creative,so inspiring. I was watching her create in her small studio in London and i was amazed at how every little detail gets included in her creaions. From frames,to glass thickness she blew me away...
+						</p>
+					</div>
+					<footer>
+						<a href="#">Read more</a>
+					</footer>
+				</article>
+			</div>				
+			<nav class="blog-nav">
+				<button id="prevPost" title="see previous post">&#10094;</button>
+				<button id="nextPost" title="see next post">&#10095;</button>
+			</nav>
 		</section>
 		<section class="subscribe">
-			<p>SUBSCRIBE TO OUR NEWSLETTER TO RECEIVE LATEST NEWS AND OFFERS</p>
-			<input placeholder="Email adress" type="email">
-			<button type="submit">Subscribe</button>
+			<div class="container">
+				<p>SUBSCRIBE TO OUR NEWSLETTER TO RECEIVE LATEST NEWS AND OFFERS</p>
+				<form action="" class="subscribe-form">
+					<input placeholder="Email address" type="email">
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
 		</section>
 		<footer>
 			Made with love by WebDonut.net

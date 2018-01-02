@@ -203,7 +203,7 @@ section {
 /* Latest Products section */
 
 .latestProducts {
-	&_collections, &__currentSales {
+	&__collections, &__currentSales {
 		display: flex;
 		justify-content: center;
 
@@ -410,22 +410,39 @@ section {
 		text-transform: uppercase;
 	}
 
-	&__item > div {
-		display: none;
-		
-		&.active {
-			display: flex;
-		}
+	&__itemsContainer {
+		overflow: hidden;
+		width: 1170px;
+		margin: 0 auto;
+	}
 
-		img {
-			width: 100%;
-			height: auto;
-			max-height: 570px;
-			margin-right: 30px;
+	&__item {
+		display: inline-flex;
+		width: 22000px;
+		transform: translate3d(-2340px, 0, 0);
+		transition: transform 0.8s ease-in-out;
+
+		div {
+			&.content {
+				float: left;
+				width: 1170px;
+				height: auto;
+				white-space: normal;
+				display: flex;
+			}
+
+			img {
+				width: 100%;
+				max-width: 570px;
+				height: auto;
+				max-height: 570px;
+				margin-right: 30px;
+			}
 		}
 	}
 
 	&__details {
+		width: 570px;
 		h4 {
 			font-family: 'Open Sans', sans-serif;
 			font-weight: 400; //regular

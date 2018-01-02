@@ -34,7 +34,7 @@
 	</header>
 		<section class="latestProducts container">
 			<h2>Latest Products</h2>
-				<div class="latestProducts_collections">
+				<div class="latestProducts__collections">
 					<div class="latestProducts__product man-collection">
 						<div class="innerBorder">
 							<a href="#">
@@ -72,54 +72,56 @@
 		</section>
 		<section class="trendingItems">
 			<h2>Trending items</h2>
-			<div class="trendingItems__item container">
-				<div id="item1" class="active">
-					<img class="trendingItems__image" src="img/dress.jpg" alt="Dark blue dress">
-					<article class="trendingItems__details" >
-						<h3 class="trendingItems__name">Kate's New Dress</h3>
-							<h4 class="trendingItems__collection">Spring/Summer Collection</h4>
-								<p class="trendingItems__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt animi aut veniam facilis. At similique neque dolores temporibus excepturi iste dolorem quidem quod maiores, quia ex repellat, quaerat, beatae aperiam.</p>
-						<ul class="trendingItems__sizes">
-							<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
-						</ul>
-						<a class="active" href="#">Shop Now</a>
-						<a href="#">Size guide</a>
-					</article>
-				</div>
-				<div id="item2">
-					<img class="trendingItems__image" src="img/jacket.jpg" alt="grey jacket">
-					<article class="trendingItems__details" >
-						<h3 class="trendingItems__name">Nathan Steward Jacket</h3>
-							<h4 class="trendingItems__collection">Summer/Autumn Collection</h4>
-								<p class="trendingItems__description">Classic Nathan Stewart Jacket from his latest collection. This item is loved by many just because of it’s simle style. Simple lines,lovely texture,it suits almost everybody. It comes in six different colors,and all sizes.</p>
-								<p class="tip">FASHION TIP:<br>
-								With this jacket,Nathan Stewart sunglasses go hand in hand!</p>
-						<ul class="trendingItems__sizes">
-							<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
-						</ul>
-						<a class="active" href="#">Shop Now</a>
-						<a href="#">Size guide</a>
-					</article>
-				</div>
-				<div id="item3">
-					<img class="trendingItems__image" src="img/productwatch.jpg" alt="watch">
-					<article class="trendingItems__details" >
-						<h3 class="trendingItems__name">New design by Arthur Schwarz</h3>
-							<h4 class="trendingItems__collection">Watches Collection</h4>
-								<p class="trendingItems__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore aspernatur, doloremque autem iure exercitationem saepe esse ad inventore voluptas dolor corporis? Voluptate aperiam dolore deserunt similique quae porro eius.</p>
-						<ul class="trendingItems__sizes">
-							<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
-						</ul>
-						<a class="active" href="#">Shop Now</a>
-						<a href="#">Size guide</a>
-					</article>
+			<div class="trendingItems__itemsContainer">
+				<div class="trendingItems__item">
+					<div id="item1" class="content active">
+						<img class="trendingItems__image" src="img/dress.jpg" alt="Dark blue dress">
+						<article class="trendingItems__details" >
+							<h3 class="trendingItems__name">Kate's New Dress</h3>
+								<h4 class="trendingItems__collection">Spring/Summer Collection</h4>
+									<p class="trendingItems__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt animi aut veniam facilis. At similique neque dolores temporibus excepturi iste dolorem quidem quod maiores, quia ex repellat, quaerat, beatae aperiam.</p>
+							<ul class="trendingItems__sizes">
+								<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
+							</ul>
+							<a class="active" href="#">Shop Now</a>
+							<a href="#">Size guide</a>
+						</article>
+					</div>
+					<div id="item2" class="content">
+						<img class="trendingItems__image" src="img/jacket.jpg" alt="grey jacket">
+						<article class="trendingItems__details" >
+							<h3 class="trendingItems__name">Nathan Steward Jacket</h3>
+								<h4 class="trendingItems__collection">Summer/Autumn Collection</h4>
+									<p class="trendingItems__description">Classic Nathan Stewart Jacket from his latest collection. This item is loved by many just because of it’s simle style. Simple lines,lovely texture,it suits almost everybody. It comes in six different colors,and all sizes.</p>
+									<p class="tip">FASHION TIP:<br>
+									With this jacket,Nathan Stewart sunglasses go hand in hand!</p>
+							<ul class="trendingItems__sizes">
+								<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
+							</ul>
+							<a class="active" href="#">Shop Now</a>
+							<a href="#">Size guide</a>
+						</article>
+					</div>
+					<div id="item3" class="content">
+						<img class="trendingItems__image" src="img/productwatch.jpg" alt="watch">
+						<article class="trendingItems__details" >
+							<h3 class="trendingItems__name">New design by Arthur Schwarz</h3>
+								<h4 class="trendingItems__collection">Watches Collection</h4>
+									<p class="trendingItems__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore aspernatur, doloremque autem iure exercitationem saepe esse ad inventore voluptas dolor corporis? Voluptate aperiam dolore deserunt similique quae porro eius.</p>
+							<ul class="trendingItems__sizes">
+								<li><a href="#">m</a></li><li class="active"><a href="#">l</a></li><li><a href="#">xl</a></li><li><a href="#">xxl</a></li>
+							</ul>
+							<a class="active" href="#">Shop Now</a>
+							<a href="#">Size guide</a>
+						</article>
+					</div>
 				</div>
 			</div>
 			<ul class="chooseItem">
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li class="active"><a href="#"></a></li>
-				<li><a href="#"></a></li>
+				<li data-pos="0px"><a href="#" ></a></li>
+				<li data-pos="-1170px"><a href="#"></a></li>
+				<li data-pos="-2340px"><a href="#" ></a></li>
+				<li data-pos="-3510px"><a href="#" ></a></li>
 			</ul>
 		</section>
 		<section class="fromBlog">

@@ -168,10 +168,10 @@ section {
       transition: background-color 0.5s; }
 
 /* Latest Products section */
-.latestProducts_collections, .latestProducts__currentSales {
+.latestProducts__collections, .latestProducts__currentSales {
   display: flex;
   justify-content: center; }
-  .latestProducts_collections > div:hover, .latestProducts__currentSales > div:hover {
+  .latestProducts__collections > div:hover, .latestProducts__currentSales > div:hover {
     background-size: 105%;
     transition: background-size 0.4s ease-in; }
 
@@ -309,72 +309,86 @@ section {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase; }
-  .trendingItems__item > div {
-    display: none; }
-    .trendingItems__item > div.active {
+  .trendingItems__itemsContainer {
+    overflow: hidden;
+    width: 1170px;
+    margin: 0 auto; }
+  .trendingItems__item {
+    display: inline-flex;
+    width: 22000px;
+    transform: translate3d(-2340px, 0, 0);
+    transition: transform 0.8s ease-in-out; }
+    .trendingItems__item div.content {
+      float: left;
+      width: 1170px;
+      height: auto;
+      white-space: normal;
       display: flex; }
-    .trendingItems__item > div img {
+    .trendingItems__item div img {
       width: 100%;
+      max-width: 570px;
       height: auto;
       max-height: 570px;
       margin-right: 30px; }
-  .trendingItems__details h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px; }
-    .trendingItems__details h4:after {
-      margin: 30px 0;
-      content: "";
-      width: 30px;
-      display: block;
-      border-top: 1px black solid; }
-  .trendingItems__details p.tip {
-    padding-top: 35px; }
-  .trendingItems__details > a {
-    margin-right: 30px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 170px;
-    border-style: solid;
-    border-color: #333333;
-    border-width: 1px; }
-    .trendingItems__details > a:hover, .trendingItems__details > a:focus {
-      background-color: #333333;
-      color: #ffffff;
-      -webkit-transition: background-color 0.3s;
-      transition: background-color 0.3s; }
-  .trendingItems__details ul.trendingItems__sizes {
-    margin: 90px 0 30px; }
-    .trendingItems__details ul.trendingItems__sizes li {
+  .trendingItems__details {
+    width: 570px; }
+    .trendingItems__details h4 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px; }
+      .trendingItems__details h4:after {
+        margin: 30px 0;
+        content: "";
+        width: 30px;
+        display: block;
+        border-top: 1px black solid; }
+    .trendingItems__details p.tip {
+      padding-top: 35px; }
+    .trendingItems__details > a {
       margin-right: 30px;
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       height: 50px;
-      width: 70px;
+      width: 170px;
       border-style: solid;
       border-color: #333333;
-      border-width: 1px;
-      -webkit-transition: background-color 0.3s;
-      transition: background-color 0.3s; }
-      .trendingItems__details ul.trendingItems__sizes li a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%; }
-        .trendingItems__details ul.trendingItems__sizes li a:hover, .trendingItems__details ul.trendingItems__sizes li a:focus {
-          background-color: #333333;
-          color: #ffffff;
-          -webkit-transition: background-color 0.3s;
-          transition: background-color 0.3s; }
-      .trendingItems__details ul.trendingItems__sizes li.active a {
-        color: #ffffff;
+      border-width: 1px; }
+      .trendingItems__details > a:hover, .trendingItems__details > a:focus {
         background-color: #333333;
+        color: #ffffff;
         -webkit-transition: background-color 0.3s;
         transition: background-color 0.3s; }
-        .trendingItems__details ul.trendingItems__sizes li.active a:hover, .trendingItems__details ul.trendingItems__sizes li.active a:focus {
-          background-color: #333333; }
+    .trendingItems__details ul.trendingItems__sizes {
+      margin: 90px 0 30px; }
+      .trendingItems__details ul.trendingItems__sizes li {
+        margin-right: 30px;
+        display: inline-block;
+        height: 50px;
+        width: 70px;
+        border-style: solid;
+        border-color: #333333;
+        border-width: 1px;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s; }
+        .trendingItems__details ul.trendingItems__sizes li a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%; }
+          .trendingItems__details ul.trendingItems__sizes li a:hover, .trendingItems__details ul.trendingItems__sizes li a:focus {
+            background-color: #333333;
+            color: #ffffff;
+            -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s; }
+        .trendingItems__details ul.trendingItems__sizes li.active a {
+          color: #ffffff;
+          background-color: #333333;
+          -webkit-transition: background-color 0.3s;
+          transition: background-color 0.3s; }
+          .trendingItems__details ul.trendingItems__sizes li.active a:hover, .trendingItems__details ul.trendingItems__sizes li.active a:focus {
+            background-color: #333333; }
   .trendingItems ul.chooseItem {
     margin-top: 45px;
     bottom: 0;

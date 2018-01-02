@@ -138,9 +138,10 @@
 				<li data-pos><a href="#" ></a></li>
 			</ul>
 		</section>
-		<section class="fromBlog">
+		<section class="fromBlog ">
 			<h2>From The Blog</h2>
-			<div class="fromBlog__blog">
+			<div class="fromBlog__container container">
+				<div class="fromBlog__blog">
 					<article class="fromBlog__item">
 						<header>
 							<img class="fromBlog__image" src="../img/wizards.jpg" alt="">
@@ -183,18 +184,18 @@
 					</article>
 					<article class="fromBlog__item">
 						<header>
-							<img class="fromBlog__image" src="../img/glasses.jpg" alt="">
+							<img class="fromBlog__image" src="../img/womenblog.jpg" alt="">
 							<h3 class="fromBlog__title">
-								<a href="">Anne Stewart's Sunglasses</a>
+								<a href="">New Women Summer Collection</a>
 							</h3>
 							<section class="fromBlog__info">
-								<p class="fromBlog__info__author">Marry Beard</p>
-								<p class="fromBlog__info__category">Trending</p>
+								<p class="fromBlog__info__author">Larry Jane</p>
+								<p class="fromBlog__info__category">Fashion</p>
 							</section>
 						</header>
 						<div class="fromBlog__text">
 							<p>
-								Just amazing! That is how i can describe this person. So creative,so inspiring. I was watching her create in her small studio in London and i was amazed at how every little detail gets included in her creaions. From frames,to glass thickness she blew me away...
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quos consequuntur vel quis in perferendis libero laudantium error. Sequi vitae reiciendis, quam iste molestias delectus. Nobis, aliquid quod rerum necessitatibus.
 							</p>
 						</div>
 						<footer>
@@ -203,27 +204,28 @@
 					</article>
 					<article class="fromBlog__item">
 						<header>
-							<img class="fromBlog__image" src="../img/glasses.jpg" alt="">
+							<img class="fromBlog__image" src="../img/model.jpg" alt="">
 							<h3 class="fromBlog__title">
-								<a href="">Anne Stewart's Sunglasses</a>
+								<a href="">Today's Inspiration Speech </a>
 							</h3>
 							<section class="fromBlog__info">
-								<p class="fromBlog__info__author">Marry Beard</p>
-								<p class="fromBlog__info__category">Trending</p>
+								<p class="fromBlog__info__author">Alya Queen</p>
+								<p class="fromBlog__info__category">Inspiration</p>
 							</section>
 						</header>
 						<div class="fromBlog__text">
 							<p>
-								Just amazing! That is how i can describe this person. So creative,so inspiring. I was watching her create in her small studio in London and i was amazed at how every little detail gets included in her creaions. From frames,to glass thickness she blew me away...
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam sint hic officiis at ipsa. Delectus tenetur temporibus quas, corporis sed eos maxime? Repudiandae consequuntur eaque soluta iste, adipisci consectetur fuga.
 							</p>
 						</div>
 						<footer>
 							<a href="#">Read more</a>
 						</footer>
 					</article>
+				</div>
 			</div>				
 			<nav class="blog-nav">
-				<button id="prevPost" title="see previous post">&#10094;</button>
+				<button id="prevPost" class="disable" title="see previous post">&#10094;</button>
 				<button id="nextPost" title="see next post">&#10095;</button>
 			</nav>
 		</section>
@@ -231,7 +233,7 @@
 			<div class="container">
 				<p>SUBSCRIBE TO OUR NEWSLETTER TO RECEIVE LATEST NEWS AND OFFERS</p>
 				<form action="" class="subscribe-form">
-					<input placeholder="Email address" type="email" required>
+					<input placeholder="Email address" type="email" required pattern="[a-z0-9._%+-]+@ [a-z0-9.-]+.[a-z]{2,4}$" title="Email should contains letters, numbers or special characters: . and _ ">
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>

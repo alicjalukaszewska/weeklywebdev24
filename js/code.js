@@ -29,13 +29,6 @@ let active = document.querySelector('.chooseItem li.active');
 const content = document.querySelector('.content');
 let showItem;
 
-function getBlogItemWidth() {
-	const wrapperSize = document.querySelector('.fromBlog').offsetWidth;
-	const itemWidth = wrapperSize / 2;
-	const itemBlog = document.querySelectorAll('.fromBlog__item');
-	itemBlog.forEach(note => note.style.width = itemWidth + 'px')
-	return itemWidth;
-}
 
 //change position depending of screen size
 function getItemPosition () {
@@ -51,7 +44,7 @@ function changeTrendingItem () {
 	active = this;
 	const currentPosition = this.getAttribute("data-pos");
 	const currentItemWrapper = document.querySelector('.trendingItems__item');
-	currentItemWrapper.style.transform = (`translate3d(${currentPosition}, 0, 0)`);
+	currentItemWrapper.style.transform = (`translateX(${currentPosition})`);
 }
 
 //change visible item every few seconds
@@ -73,6 +66,7 @@ function changeItemInTime () {
 
 window.addEventListener('load', () => { 
 		getItemPosition();
+		getBlogWrapperWidth();
 		getBlogItemWidth();
 	});
 window.addEventListener('resize', getItemPosition);
@@ -87,3 +81,67 @@ trendingItemSection.addEventListener('mouseout', function() {
 	showItem = setInterval(changeItemInTime, 5000);
 })
 
+
+//Blog slider
+const prevPost = document.querySelector('#prevPost');
+const nextPost = document.querySelector('#nextPost');
+const itemBlog = document.querySelectorAll('.fromBlog__item');
+const blogWrapper = document.querySelector('.fromBlog__blog');
+
+function getBlogItemWidth() {
+	const wrapperSize = document.querySelector('.fromBlog__container').offsetWidth;
+	const itemWidth = wrapperSize / 2;
+	itemBlog.forEach(note => note.style.width = itemWidth + 'px')
+	return itemWidth;
+}
+
+function getBlogWrapperWidth () {
+	let itemsWidth = getBlogItemWidth() * itemBlog.length;
+	blogWrapper.style.width = `${itemsWidth}px`;
+	return itemsWidth;
+}
+
+function disableArrow (arrow, secondArrow) {
+	arrow.disable = true;
+	arrow.classList.add('disable');
+	secondArrow.addEventListener('click', changeBlogItem);
+}
+
+function changeBlogItem () {
+	//prevent user to click arrows during transition
+	prevPost.removeEventListener('click', changeBlogItem);
+	nextPost.removeEventListener('click', changeBlogItem);
+
+	//get width of blog items
+	let width = -(getBlogItemWidth());
+	//get current translateX value
+	let getTranslateX = window.getComputedStyle(blogWrapper);
+	var matrix = new WebKitCSSMatrix(getTranslateX.webkitTransform);
+	currentX = matrix.m41;
+	//check which arrow was clicked
+	if (this.id == 'nextPost'){
+		//stop on last item
+		if (currentX == width * (itemBlog.length - 2)) {
+			disableArrow(this, prevPost);
+			return;
+		}
+		prevPost.classList.remove('disable');
+		blogWrapper.style.transform = (`translateX(${currentX + width}px)`);
+	} else {
+		//stop on first item
+		if (currentX === 0) {
+			disableArrow(this, nextPost);
+			return;
+		}
+		nextPost.classList.remove('disable');
+		blogWrapper.style.transform = (`translateX(${currentX - width}px)`);
+	}
+	//let user click arrows again after transition
+	blogWrapper.addEventListener('transitionend', () => {
+		prevPost.addEventListener('click', changeBlogItem);
+		nextPost.addEventListener('click', changeBlogItem);
+	})
+}
+
+prevPost.addEventListener('click', changeBlogItem);
+nextPost.addEventListener('click', changeBlogItem);

@@ -147,6 +147,9 @@ section {
 		position: absolute;
 		margin-bottom: 60px;
 		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
 
 		li {
 			margin: 0 5px;
@@ -419,7 +422,7 @@ section {
 	&__item {
 		display: inline-flex;
 		width: 5000px;
-		transform: translate3d(0, 0, 0);
+		transform: translateX(0);
 		transition: transform 0.8s ease-in-out;
 
 		div {
@@ -557,21 +560,26 @@ section {
 /* Blog Preview */
 
 .fromBlog {
-	width: 100%;
+	position: relative;
 	margin: 0 auto;
 	padding-bottom: 60px;
-	width: 1170px;
-	overflow: hidden;
+
+	&__container {
+		width: 1170px;
+		overflow: hidden;
+	}
 
 	&__blog {
-		width: 5000px;
-		transform: translate3d(-0px, 0, 0);
+		width: 2500px;
+		transform: translateX(0);
+		transition: transform 1s ease-in;
 	}
 
 	&__item {
 		padding: 0 15px;		
 		float: left;
 		height: auto;
+		width: 800px;
 
 		img {
 			width: 100%;
@@ -632,22 +640,31 @@ section {
 		}
 	}
 
-	// .blog-nav {
-	// 	position: absolute;
-	// 	margin-top: 400px;
-	// 	display: flex;
-	// 	justify-content: space-between;
-	// 	align-self: center;
-	// 	width: 100%;
-	// 	max-width: 1300px;
-	// 	font-size: 50px;
+	.blog-nav {
+		position: absolute;
+		margin: 0 auto;
+		top: 50%;
+		left: 0;
+		right: 0;
+		max-width: 1300px;
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		align-self: center;
+		font-size: 50px;
 
-	// 	* {
-	// 		margin: 0 10px;
-	// 		color: $arrowsColor;
-	// 		background-color: transparent;
-	// 	}
-	// }
+		* {
+			margin: 0 10px;
+			color: $arrowsColor;
+			background-color: transparent;
+			cursor: pointer;
+
+
+		  	&.disable {
+		  		opacity: 0.3;
+		  	}
+		}
+	}
 }
 
 /*Subscription form */

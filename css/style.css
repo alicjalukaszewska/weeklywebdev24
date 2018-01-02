@@ -309,10 +309,13 @@ section {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase; }
-  .trendingItems__item {
-    display: flex; }
-    .trendingItems__item img {
-      height: 70vh;
+  .trendingItems__item > div {
+    display: none; }
+    .trendingItems__item > div.active {
+      display: flex; }
+    .trendingItems__item > div img {
+      width: 100%;
+      height: auto;
       max-height: 570px;
       margin-right: 30px; }
   .trendingItems__details h4 {

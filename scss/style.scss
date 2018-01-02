@@ -10,7 +10,6 @@
 	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
-	white-space: normal;
 }
 
 body {
@@ -419,8 +418,8 @@ section {
 
 	&__item {
 		display: inline-flex;
-		width: 22000px;
-		transform: translate3d(-2340px, 0, 0);
+		width: 5000px;
+		transform: translate3d(0, 0, 0);
 		transition: transform 0.8s ease-in-out;
 
 		div {
@@ -559,19 +558,20 @@ section {
 
 .fromBlog {
 	width: 100%;
-	max-width: 1400px;
 	margin: 0 auto;
 	padding-bottom: 60px;
-	display: flex;
-	flex-direction: column;
+	width: 1170px;
+	overflow: hidden;
 
 	&__blog {
-		display: flex;
-
+		width: 5000px;
+		transform: translate3d(-0px, 0, 0);
 	}
 
 	&__item {
-		margin: 0 15px;
+		padding: 0 15px;		
+		float: left;
+		height: auto;
 
 		img {
 			width: 100%;
@@ -632,22 +632,22 @@ section {
 		}
 	}
 
-	.blog-nav {
-		position: absolute;
-		margin-top: 700px;
-		display: flex;
-		justify-content: space-between;
-		align-self: center;
-		width: 100%;
-		max-width: 1300px;
-		font-size: 50px;
+	// .blog-nav {
+	// 	position: absolute;
+	// 	margin-top: 400px;
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// 	align-self: center;
+	// 	width: 100%;
+	// 	max-width: 1300px;
+	// 	font-size: 50px;
 
-		* {
-			margin: 0 10px;
-			color: $arrowsColor;
-			background-color: transparent;
-		}
-	}
+	// 	* {
+	// 		margin: 0 10px;
+	// 		color: $arrowsColor;
+	// 		background-color: transparent;
+	// 	}
+	// }
 }
 
 /*Subscription form */

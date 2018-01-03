@@ -2,35 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700,900|Open+Sans:300i,400" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<title>Brand LY - Weekly Web Dev Challenge 24</title>
 </head>
 <body>			
 	<div class="top-menu">
-		<a href="index.html"><img src="img/logo.png" alt=""></a>
-		<nav id="menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Shop</a></li>
-				<li><a href="#">Brands</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
+		<div class="container">
+			<a href="index.html"><img src="img/logo.png" alt=""></a>
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">Brands</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 	<header class="mainHeader">
 			<h3 class="above">Spring / Summer Collection</h3>
 				<h2>up to 60% discount on new arrivals</h2>
 			<h3 class="down">trending new items, from creators around the world</h3>
 			<a class="shop" href="#">shop now</a>
-			<ul>
+<!-- 			<ul>
 				<li><a href="#"></a></li>
 				<li><a href="#"></a></li>
 				<li class="active"><a  href="#"></a></li>
 				<li><a href="#"></a></li>
-			</ul>
+			</ul> -->
 	</header>
 		<section class="latestProducts container">
 			<h2>Latest Products</h2>
@@ -75,7 +78,9 @@
 			<div class="trendingItems__itemsContainer">
 				<div class="trendingItems__item">
 					<div id="item1" class="content active">
-						<img class="trendingItems__image" src="img/jacket.jpg" alt="grey jacket">
+						<div class="imgWrapper">
+							<img class="trendingItems__image" src="img/jacket.jpg" alt="grey jacket">
+						</div>
 						<article class="trendingItems__details" >
 							<h3 class="trendingItems__name">Nathan Steward Jacket</h3>
 								<h4 class="trendingItems__collection">Summer/Autumn Collection</h4>
@@ -91,7 +96,9 @@
 						
 					</div>
 					<div id="item2" class="content">
-						<img class="trendingItems__image" src="img/dress.jpg" alt="Dark blue dress">
+						<div class="imgWrapper">
+							<img class="trendingItems__image" src="img/dress.jpg" alt="Dark blue dress">
+						</div>
 						<article class="trendingItems__details" >
 							<h3 class="trendingItems__name">Kate's New Dress</h3>
 								<h4 class="trendingItems__collection">Spring/Summer Collection</h4>
@@ -104,7 +111,9 @@
 						</article>
 					</div>
 					<div id="item3" class="content">
-						<img class="trendingItems__image" src="img/productwatch.jpg" alt="watch">
+						<div class="imgWrapper">
+							<img class="trendingItems__image" src="img/productwatch.jpg" alt="watch">
+						</div>
 						<article class="trendingItems__details" >
 							<h3 class="trendingItems__name">New design by Arthur Schwarz</h3>
 								<h4 class="trendingItems__collection">Watches Collection</h4>
@@ -117,7 +126,9 @@
 						</article>
 					</div>
 					<div id="item5" class="content">
-						<img class="trendingItems__image" src="img/scarf.jpg" alt="watch">
+						<div class="imgWrapper">
+							<img class="trendingItems__image" src="img/scarf.jpg" alt="watch">
+						</div>
 						<article class="trendingItems__details" >
 							<h3 class="trendingItems__name">Beautiful scarf from Jessica London</h3>
 								<h4 class="trendingItems__collection">Collection Autumn/Winter</h4>
@@ -140,7 +151,7 @@
 		</section>
 		<section class="fromBlog ">
 			<h2>From The Blog</h2>
-			<div class="fromBlog__container container">
+			<div class="fromBlog__container">
 				<div class="fromBlog__blog">
 					<article class="fromBlog__item">
 						<header>

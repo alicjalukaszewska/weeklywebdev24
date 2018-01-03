@@ -28,6 +28,14 @@ section {
 	.container {
 		margin: 0 auto;
 		width: 1170px;
+
+		@media #{$up920}{
+			width: 900px;
+		}
+
+		@media #{$up768}{
+			width: 600px;
+		}
 	}
 
 	h2 {
@@ -67,14 +75,25 @@ section {
 
 .top-menu {
 	position: fixed;
-	justify-content: space-between;
-	align-items: center;
-	display: inline-flex;
+	margin: 0 auto;
 	width: 100%;
-	height: 90px;
 	z-index: 99;
 	-webkit-transition: background-color 0.3s; 
 	transition: background-color 0.3s;
+
+	& .container {	
+		margin: 0 auto;
+		
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 90px;
+		max-width: 1170px;
+		width: 100%;
+		@media #{$up920}{
+			padding: 0 20px;
+		}
+	}
 
 	&.scrolled {
 		background-color: $transparent80percent;
@@ -90,10 +109,6 @@ section {
 				transition: color 0.2s;
 			} 
 		}
-	}
-
-	& > * {
-		margin: 0 35px;
 	}
 
 	ul {
@@ -169,16 +184,21 @@ section {
 	}
 
 	h2 {
+		padding: 30px;		
 		font-size: 60px;
-		padding: 30px;
-		text-transform: uppercase;
+		font-size: 4.6vw;		
 		font-weight: 900; //black
+		text-transform: uppercase;
+		text-align: center;
+		white-space: nowrap;
 	}
 
 	h3 {
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
 		font-size: 30px;
+		font-size: 2.4vw;
+		text-align: center;
 		text-transform: uppercase;
 		
 		&.above {
@@ -210,9 +230,22 @@ section {
 		display: flex;
 		justify-content: center;
 
+		& > div {
+			background-size: 100%;
+			transition: background-size 0.4s ease-in;
+
+			@media #{$up920}{
+				background-size: cover;
+			}
+		}
+
 		& > div:hover {
 			background-size: 105%;
 			transition: background-size 0.4s ease-in;
+
+			@media #{$up920}{
+				background-size: cover;
+			}
 		}
 	}
 	
@@ -222,6 +255,11 @@ section {
 		height: 418px;
 		width: 370px;
 		box-sizing: border-box; 
+		@media #{$up768}{
+			height: 300px;
+			width: 100%;
+			margin: 5px;
+		}
 
 		a {				
 			position: relative;		
@@ -259,6 +297,10 @@ section {
 				-webkit-transition: opacity 0.3s ease; 
 				transition: opacity 0.3s ease;
 				color: $lightElementsColor;
+				@media #{$up768}{
+					font-size: 12px;
+					padding: 1em;
+				}
 			}
 
 			&:hover {
@@ -271,6 +313,9 @@ section {
 					opacity: 1;
 					-webkit-transition: opacity 0.6s; 
 					transition: opacity 0.6s;
+					@media #{$up768}{
+						bottom: 5px;
+					}
 				}
 			}
 		}
@@ -282,10 +327,7 @@ section {
 					url('../img/man.jpg'); 
 				repeat: no-repeat; 
 				position: center center;
-				size: 100%;
-				
 			}
-			transition: background-size 0.4s ease-in;
 		}
 		&.woman-collection {
 			background: {
@@ -294,10 +336,7 @@ section {
 					url('../img/woman.jpg'); 
 				repeat: no-repeat;
 				position: center center;
-				size: 100%;
-				
-			}
-			transition: background-size 0.4s ease-in; 
+			} 
 		}
 		&.watches-collection {
 			background: {
@@ -306,10 +345,7 @@ section {
 					url('../img/watch.jpg'); 
 				repeat: no-repeat; 
 				position: center center;
-				size: 100%;
-				
 			}
-			transition: background-size 0.4s ease-in;
 		}		
 
 		.innerBorder {
@@ -327,6 +363,11 @@ section {
 		height: 418px;
 		width: 570px;
 		box-sizing: border-box;
+		@media #{$up768}{
+			height: 300px;
+			width: 100%;
+			margin: 5px;
+		}
 
 		a {
 			display: inline-flex;
@@ -340,6 +381,7 @@ section {
 			font-family: 'Lato', sans-serif;
 			font-weight: 900; //black
 			font-size: 45px;
+			font-size: 4vw;
 			font-style: normal;
 
 			&:before, &:after {
@@ -379,9 +421,7 @@ section {
 					url('../img/autumn.jpg'); 
 				repeat: no-repeat; 
 				position: center center;
-				size: 100%;
 			}
-			transition: background-size 0.4s ease-in;
 		}
 		&.spirit-collection {
 			background: {
@@ -390,9 +430,7 @@ section {
 					url('../img/spirit.jpg'); 
 				repeat: no-repeat; 
 				position: center center;
-				size: 100%;
 			}
-			transition: background-size 0.4s ease-in;
 		}	
 	}
 }
@@ -402,7 +440,7 @@ section {
 .trendingItems {
 	position: relative;
 	background-image: url('../img/itemsbg.jpg');
-	max-height: 918px;
+	background-size: cover;
 	padding-bottom: 60px;
 
 	a {
@@ -414,9 +452,17 @@ section {
 	}
 
 	&__itemsContainer {
+		margin: 0 auto;
 		overflow: hidden;
 		width: 1170px;
-		margin: 0 auto;
+
+		@media #{$up920}{
+			width: 880px;
+		}
+
+		@media #{$up768}{
+			width: 600px;
+		}
 	}
 
 	&__item {
@@ -428,24 +474,48 @@ section {
 		div {
 			&.content {
 				float: left;
-				width: 1170px;
+				width: 1170px; //initial width
 				height: auto;
 				white-space: normal;
 				display: flex;
-			}
 
+				@media #{$up768}{
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+
+		.imgWrapper {
+			margin-right: 30px;
 			img {
-				width: 100%;
 				max-width: 570px;
 				height: auto;
 				max-height: 570px;
-				margin-right: 30px;
+				@media #{$up920}{
+					width: 400px;
+				}			
 			}
 		}
 	}
 
 	&__details {
-		width: 570px;
+		width: 100%;
+			@media #{$up920}{
+				max-width: 400px;
+			}
+
+			@media #{$up768}{
+				width: 100%;
+			}
+
+		h3 {
+			@media #{$up920}{
+				margin: 0 0 10px;
+			}
+		}
+
 		h4 {
 			font-family: 'Open Sans', sans-serif;
 			font-weight: 400; //regular
@@ -457,6 +527,10 @@ section {
 				width: 30px;
 				display: block;
 				border-top: 1px black solid;
+
+				@media #{$up920}{
+					margin: 15px 0;
+				}
 			}
 		}
 
@@ -482,8 +556,12 @@ section {
 				color: $lightElementsColor;
 				-webkit-transition: background-color 0.3s; 
 				transition: background-color 0.3s;
-			}
-		}
+			}				
+
+			@media #{$up920}{
+					margin: 0 15px 0 0;
+				}
+		}	
 
 		ul.trendingItems__sizes {
 			margin: 90px 0 30px;
@@ -565,21 +643,26 @@ section {
 	padding-bottom: 60px;
 
 	&__container {
+		margin: 0 auto;
 		width: 1170px;
 		overflow: hidden;
+
+		@media #{$up920}{
+			width: 860px;
+		}
 	}
 
 	&__blog {
 		width: 2500px;
 		transform: translateX(0);
-		transition: transform 1s ease-in;
+		transition: transform 0.8s ease-in;
 	}
 
 	&__item {
 		padding: 0 15px;		
 		float: left;
 		height: auto;
-		width: 800px;
+		width: 500px;
 
 		img {
 			width: 100%;
@@ -653,6 +736,10 @@ section {
 		align-self: center;
 		font-size: 50px;
 
+		@media #{$up920}{
+			max-width: 1000px;
+		}
+
 		* {
 			margin: 0 10px;
 			color: $arrowsColor;
@@ -671,9 +758,11 @@ section {
 
 .subscribe {
 	margin-bottom: 0;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	height: 250px;
 	color: $lightElementsColor;
 	background: {
@@ -698,10 +787,8 @@ section {
 		text-transform: uppercase;
 	}
 
-
 	form {
 		display: inline-block;
-
 	}
 
 	input {
@@ -720,6 +807,14 @@ section {
 		font-weight: 300; //light
 		font-size: 13px;
 		text-transform: uppercase;
+
+		@media #{$up920}{
+			width: 560px;
+		}
+
+		@media #{$up768}{
+			width: 400px;
+		}
 	}
 
 	button {
@@ -729,6 +824,16 @@ section {
 		margin-left: 100px;
 		height: 70px;
 		width: 270px;
+
+		@media #{$up920}{
+			margin-left: 50px;
+			width: 200px;
+		}
+
+		@media #{$up768}{
+			margin-left: 20px;
+			width: 150px;
+		}
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.5);
@@ -748,6 +853,10 @@ body > footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media #{$up768}{
+		height: 60px;
+	}
 
 	img {
 		margin: 0 5px;

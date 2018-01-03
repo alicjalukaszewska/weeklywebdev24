@@ -11,55 +11,6 @@ $gradientOverlay: rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7);
 $gradientOverlayHover: rgba(34, 37, 51, 0.7), rgba(255, 255, 255, 0.2);
 $gradientSliderOverlay: rgba(34, 37, 51, 0.4), rgba(34, 37, 51, 0.4);
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(40px);
-        transform: translateY(40px);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-}
-
-@keyframes moveUp {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    100% {
-        -webkit-transform: translateY(-40px);
-        transform: translateY(-40px)
-    }
-}
-
-@keyframes moveDown {
-    0% {
-        -webkit-transform: translateY(-40px);
-        transform: translateY(-40px);
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-}
-
-@mixin fadeIn {
-	animation-name: fadeIn;
-	animation-duration: 0.5s;
-}
-
-@mixin moveUp {
-	animation-name: moveUp;
-	animation-duration: 1s;
-}
-
-@mixin moveDown {
-	animation-name: moveDown;
-	animation-duration: 3s;
-}
+$up768: "only screen and (max-width: 920px)";
+$up920: "only screen and (max-width: 1265px)";
+$up1280: "only screen and (min-width: 1265px)"; 

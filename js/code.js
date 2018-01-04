@@ -46,7 +46,6 @@ function getItemPosition () {
 	resetActiveItem();
 	//get width of container
 	const currentWidth = offsetContentDiv.offsetWidth;
-	console.log(currentWidth);
 	//set new width to items
 	content.forEach(item => {
 		item.style.width =`${currentWidth}px`;
@@ -167,3 +166,10 @@ window.addEventListener('resize', getBlogItemWidth);
 
 prevPost.addEventListener('click', changeBlogItem);
 nextPost.addEventListener('click', changeBlogItem);
+
+//dropdown menu
+
+const dropdownBtn = document.querySelector('.navbar-toggle');
+const menu = document.querySelector('nav.dropdown');
+
+dropdownBtn.addEventListener('click', () => menu.classList.toggle('dropped'));

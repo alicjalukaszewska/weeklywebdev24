@@ -61,6 +61,10 @@ section {
 		&:after {
 			border-top: 3px $accentsColor solid;
 		}
+
+		@media #{$up768}{
+			padding: 1px 0;
+		}
 	}
 
 	h3 {
@@ -83,15 +87,15 @@ section {
 
 	& .container {	
 		margin: 0 auto;
-		
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 		height: 90px;
 		max-width: 1170px;
 		width: 100%;
 		@media #{$up920}{
 			padding: 0 20px;
+			width: 100%;
 		}
 	}
 
@@ -111,7 +115,7 @@ section {
 		}
 	}
 
-	ul {
+	nav.dropdown {
 		font-family: 'Open Sans', sans-serif;
 		font-size: 18px;
 
@@ -133,6 +137,47 @@ section {
 					transition: color 0.2s;
 				} 
 			}
+		}
+
+		&.dropped {
+			display: block;
+			background-color: $transparent80percent;
+			width: 100%;
+			z-index: 99;
+
+			li {
+				display: block;
+				width: 100%;
+				padding: 10px;
+
+
+			}
+		}
+
+		@media #{$up768}{
+			display: none;
+		}
+	}
+
+	.navbar-toggle {
+		border: 0;
+		background: none;
+
+		div {
+			width: 35px;
+			height: 5px;
+			background-color: $accentsColor;
+			margin: 6px 0;
+		}
+
+		&:hover div {
+			-webkit-transition: background-color 0.2s; 
+			transition: background-color 0.2s;
+			background-color: $blogTextColor;
+		}
+
+		@media #{$upRight920}{
+			display: none;
 		}
 	}
 }
@@ -514,6 +559,10 @@ section {
 			@media #{$up920}{
 				margin: 0 0 10px;
 			}
+
+			@media #{$up768}{
+				margin: 20px 0 10px;
+			}
 		}
 
 		h4 {
@@ -565,6 +614,9 @@ section {
 
 		ul.trendingItems__sizes {
 			margin: 90px 0 30px;
+			@media #{$up920}{
+				margin-top: 30px;
+			}
 			li {
 				margin-right: 30px;
 				display: inline-block;
@@ -745,7 +797,6 @@ section {
 			color: $arrowsColor;
 			background-color: transparent;
 			cursor: pointer;
-
 
 		  	&.disable {
 		  		opacity: 0.3;

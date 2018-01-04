@@ -122,8 +122,9 @@ section {
 		-webkit-transition: background-color 0.3s; 
 		transition: background-color 0.3s;
 		a {
+			@media #{$upRight920}{
 			color: $darkElementsColor;
-
+		}
 			&:hover, &:focus {
 				color: $accentsColor;
 				text-decoration: underline;
@@ -132,103 +133,162 @@ section {
 			} 
 		}
 	}
+}
 
-	nav.dropdown {
-		font-family: 'Open Sans', sans-serif;
-		font-size: 18px;
+/* Dropdown menu */
+nav.dropdown {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
 
-		li {
-			display: inline-block;
-			margin-right: 70px;
+	li {
+		display: inline-block;
+		margin-right: 70px;
 
-			&:last-child {
-				margin-right: 0;
-			}
-
-			a {
-				color: $lightElementsColor;
-
-				&:hover, &:focus {
-					color: $blogTextColor;
-					text-decoration: underline;
-					-webkit-transition: color 0.2s; 
-					transition: color 0.2s;
-				} 
-			}
+		&:last-child {
+			margin-right: 0;
 		}
 
-		&.dropped {
-			position: fixed;
-			display: block;
-			margin-top: -90px;
-			background-color: rgba(0, 0, 0, 0.95);
+		a {
+			color: $lightElementsColor;
+			&:hover, &:focus {
+				color: $accentsColor;
+				text-decoration: underline;
+				-webkit-transition: color 0.2s; 
+				transition: color 0.2s;
+			} 
+
+		}
+	}
+
+	&.dropped {
+		position: fixed;
+		display: block;
+		margin-top: -90px;
+		background-color: rgba(0, 0, 0, 0.95);
+		width: 100%;
+		height: 100vh;
+		z-index: -10;
+		text-align: center;
+		text-transform: uppercase;
+		display: flex;				
+		align-items: center;
+		justify-content: center;
+
+		ul {
 			width: 100%;
-			height: 100vh;
-			z-index: -10;
-			text-align: center;
-			text-transform: uppercase;
-			display: flex;				
-			align-items: center;
-			justify-content: center;
-
-			ul {
+		
+			li {
+				margin: 0;
+				border-top: 2px solid $accentsColor;
 				width: 100%;
-			
-				li {
-					margin: 0;
-					border-top: 2px solid $accentsColor;
+				height: 100px;
+				box-sizing: content-box;
+
+				&:first-child {
+					border: 0;
+				}
+
+				a {
+					display: flex;				
+					align-items: center;
+					justify-content: center;
 					width: 100%;
-					height: 100px;
-					box-sizing: content-box;
+					height: 100%;
 
-					&:first-child {
-
-						border: 0;
+					&:hover, &:focus {
 					}
 
-					&:hover {
-
-					}
-
-					a {
-						display: flex;				
-						align-items: center;
-						justify-content: center;
-						width: 100%;
-						height: 100%;
-					}
 				}
 			}
 		}
-
-		@media #{$up768}{
-			display: none;
-		}
 	}
 
-	.navbar-toggle {
-		border: 0;
-		background: none;
-		cursor: pointer;
-
-		div {
-			width: 35px;
-			height: 5px;
-			background-color: $accentsColor;
-			margin: 6px 0;
-		}
-
-		&:hover div {
-			-webkit-transition: background-color 0.2s; 
-			transition: background-color 0.2s;
-			background-color: $blogTextColor;
-		}
-
-		@media #{$upRight920}{
-			display: none;
-		}
+	@media #{$up768}{
+		display: none;
 	}
 }
+
+/* Dropdown button */
+
+#nav-icon {
+	width: 60px;
+	height: 45px;
+	position: relative;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: scale(0.8) rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	
+
+	span {
+		display: block;
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		background: $accentsColor;
+		border-radius: 9px;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .25s ease-in-out;
+		-moz-transition: .25s ease-in-out;
+		-o-transition: .25s ease-in-out;
+		transition: .25s ease-in-out;
+
+		&:nth-child(1) {
+			top: 0px;
+		}
+
+		&:nth-child(2), &:nth-child(3){
+			top: 18px;
+		}
+		&:nth-child(4) {
+			top: 36px;
+		}
+	}
+
+	&.open span{
+		&:nth-child(1) {
+			top: 18px;
+			width: 0%;
+			left: 50%;
+		}
+
+		&:nth-child(2) {
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		&:nth-child(3) {
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		&:nth-child(4) {
+		  top: 18px;
+		  width: 0%;
+		  left: 50%;
+		}
+	}
+	@media #{$upRight920}{
+		display: none;
+	}
+}
+
+
+
 
 
 /* Header with slider */

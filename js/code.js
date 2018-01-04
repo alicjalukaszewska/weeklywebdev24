@@ -169,7 +169,15 @@ nextPost.addEventListener('click', changeBlogItem);
 
 //dropdown menu
 
-const dropdownBtn = document.querySelector('.navbar-toggle');
+const dropdownBtn = document.querySelector('#nav-icon');
 const menu = document.querySelector('nav.dropdown');
 
 dropdownBtn.addEventListener('click', () => menu.classList.toggle('dropped'));
+dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
+
+
+window.addEventListener('resize', () => {
+	if (window.innerWidth >= 920){
+		menu.classList.remove('dropped');
+	}
+})

@@ -59,21 +59,35 @@ section {
   position: fixed;
   margin: 0 auto;
   width: 100%;
-  z-index: 99;
+  z-index: 1;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s; }
-  .top-menu .container {
+  .top-menu .containerHeader {
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 90px;
     max-width: 1170px;
     width: 100%; }
+    .top-menu .containerHeader .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90px;
+      z-index: 2; }
+      @media only screen and (max-width: 920px) {
+        .top-menu .containerHeader .head {
+          padding: 20px 50px;
+          width: 100%; } }
     @media only screen and (max-width: 1265px) {
-      .top-menu .container {
+      .top-menu .containerHeader {
         padding: 0 20px;
         width: 100%; } }
+    @media only screen and (max-width: 920px) {
+      .top-menu .containerHeader {
+        padding: 0;
+        display: block; } }
   .top-menu.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
     -webkit-transition: background-color 0.3s;
@@ -101,20 +115,41 @@ section {
           -webkit-transition: color 0.2s;
           transition: color 0.2s; }
     .top-menu nav.dropdown.dropped {
+      position: fixed;
       display: block;
-      background-color: rgba(255, 255, 255, 0.8);
+      margin-top: -90px;
+      background-color: rgba(0, 0, 0, 0.95);
       width: 100%;
-      z-index: 99; }
-      .top-menu nav.dropdown.dropped li {
-        display: block;
-        width: 100%;
-        padding: 10px; }
+      height: 100vh;
+      z-index: -10;
+      text-align: center;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .top-menu nav.dropdown.dropped ul {
+        width: 100%; }
+        .top-menu nav.dropdown.dropped ul li {
+          margin: 0;
+          border-top: 2px solid #dc0000;
+          width: 100%;
+          height: 100px;
+          box-sizing: content-box; }
+          .top-menu nav.dropdown.dropped ul li:first-child {
+            border: 0; }
+          .top-menu nav.dropdown.dropped ul li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%; }
     @media only screen and (max-width: 920px) {
       .top-menu nav.dropdown {
         display: none; } }
   .top-menu .navbar-toggle {
     border: 0;
-    background: none; }
+    background: none;
+    cursor: pointer; }
     .top-menu .navbar-toggle div {
       width: 35px;
       height: 5px;

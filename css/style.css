@@ -23,7 +23,7 @@ section {
     width: 1170px; }
     @media only screen and (max-width: 1265px) {
       section .container {
-        width: 900px; } }
+        width: 880px; } }
     @media only screen and (max-width: 920px) {
       section .container {
         width: 600px; } }

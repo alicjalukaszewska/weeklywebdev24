@@ -104,13 +104,16 @@ const itemBlog = document.querySelectorAll('.fromBlog__item');
 const blogWrapper = document.querySelector('.fromBlog__blog');
 
 function getBlogWrapperWidth () {
-	let itemsWidth = getBlogItemWidth() * itemBlog.length;
-	blogWrapper.style.width = `${itemsWidth}px`;
+	let allItemsWidth = getBlogItemWidth() * itemBlog.length;
+	blogWrapper.style.width = `${allItemsWidth}px`;
 }
 
 function getBlogItemWidth() {
 	const wrapperSize = document.querySelector('.fromBlog__container').offsetWidth;
-	const itemWidth = wrapperSize / 2;
+	let itemWidth = wrapperSize;
+	if (window.innerWidth >= 920){
+		itemWidth = wrapperSize / 2;
+	}
 	itemBlog.forEach(note => note.style.width = itemWidth + 'px')
 	return itemWidth;
 }

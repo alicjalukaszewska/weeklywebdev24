@@ -57,6 +57,9 @@ section {
 		@media #{$down920}{
 			padding: 1px 0;
 		}
+		@media #{$down460}{
+			font-size: 32px;
+		}	
 	}
 
 	h3 {
@@ -66,6 +69,9 @@ section {
 		font-size: 30px;
 		font-weight: 700; //bold
 		margin: 30px 0;
+		@media #{$down460}{
+			font-size: 26px;
+		}	
 	}
 }
 
@@ -280,8 +286,6 @@ nav.dropdown {
 
 
 
-
-
 /* Header with slider */
 .mainHeader {
 	position: relative;
@@ -357,6 +361,9 @@ nav.dropdown {
 			white-space: normal;
 			font-size: 3vw;
 		}
+		@media #{$down460}{
+			font-size: 3.8vw;
+		}	
 		&.above {
 			letter-spacing: 10px;
 		}
@@ -631,8 +638,8 @@ nav.dropdown {
 			width: 400px;
 			align-items: normal;
 		}
-		@media #{$down768}{
-			background-position: center center;
+		@media #{$down460}{
+			width: 300px;
 		}
 	}
 
@@ -655,6 +662,10 @@ nav.dropdown {
 					justify-content: center;
 					align-items: center;
 				}
+
+				@media #{$down460}{
+					padding: 10px;
+				}	
 			}
 		}
 
@@ -666,7 +677,10 @@ nav.dropdown {
 				max-height: 570px;
 				@media #{$down1265}{
 					width: 400px;
-				}			
+				}	
+				@media #{$down460}{
+					width: 300px;
+				}		
 			}
 
 			@media #{$down920}{
@@ -739,7 +753,11 @@ nav.dropdown {
 
 			@media #{$down1265}{
 					margin: 0 15px 0 0;
-				}
+			}
+			@media #{$down460}{
+				margin-top: 10px;
+				width: 100%;
+			}	
 		}	
 
 		ul.trendingItems__sizes {
@@ -747,6 +765,12 @@ nav.dropdown {
 			@media #{$down1265}{
 				margin-top: 30px;
 			}
+
+			@media #{$down460}{
+				margin: 25px 0 15px;
+				text-align: center;
+			}	
+
 			li {
 				margin-right: 30px;
 				display: inline-block;
@@ -759,6 +783,11 @@ nav.dropdown {
 				}
 				-webkit-transition: background-color 0.3s; 
 				transition: background-color 0.3s;
+				@media #{$down460}{
+					margin: 0 10px;
+					height: 50px;
+					width: 50px;
+				}	
 
 				a {
 					display: inline-flex;
@@ -838,9 +867,13 @@ nav.dropdown {
 		}
 
 		@media #{$down768}{
-			width: 400px;
+			width: 390px;
 			// align-items: normal;
 		}
+
+		@media #{$down460}{
+			width: 280px;
+		}	
 	}
 
 	&__blog {
@@ -996,6 +1029,9 @@ nav.dropdown {
 
 	form {
 		display: inline-block;
+		@media #{$down768}{
+			display: flex;
+		}
 	}
 
 	input {
@@ -1024,7 +1060,9 @@ nav.dropdown {
 		}
 
 		@media #{$down768}{
-			width: 220px;
+			width: 100%;
+			min-width: 195px;
+			flex: 2;
 		}
 	}
 
@@ -1044,6 +1082,12 @@ nav.dropdown {
 		@media #{$down920}{
 			margin-left: 20px;
 			width: 150px;
+		}
+
+		@media #{$down768}{
+			width: 100%;
+			padding: 10px;
+			flex: 1;
 		}
 
 		&:hover {

@@ -41,6 +41,9 @@ section {
     @media only screen and (max-width: 920px) {
       section h2 {
         padding: 1px 0; } }
+    @media only screen and (max-width: 460px) {
+      section h2 {
+        font-size: 32px; } }
   section h3 {
     color: #dc0000;
     text-transform: uppercase;
@@ -48,6 +51,9 @@ section {
     font-size: 30px;
     font-weight: 700;
     margin: 30px 0; }
+    @media only screen and (max-width: 460px) {
+      section h3 {
+        font-size: 26px; } }
 
 .top-menu {
   position: fixed;
@@ -263,6 +269,9 @@ nav.dropdown {
       .mainHeader h3 {
         white-space: normal;
         font-size: 3vw; } }
+    @media only screen and (max-width: 460px) {
+      .mainHeader h3 {
+        font-size: 3.8vw; } }
     .mainHeader h3.above {
       letter-spacing: 10px; }
   .mainHeader a.shop {
@@ -464,9 +473,9 @@ nav.dropdown {
       .trendingItems__itemsContainer {
         width: 400px;
         align-items: normal; } }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 460px) {
       .trendingItems__itemsContainer {
-        background-position: center center; } }
+        width: 300px; } }
   .trendingItems__item {
     display: inline-flex;
     width: 5000px;
@@ -483,6 +492,9 @@ nav.dropdown {
           flex-direction: column;
           justify-content: center;
           align-items: center; } }
+      @media only screen and (max-width: 460px) {
+        .trendingItems__item div.content {
+          padding: 10px; } }
     .trendingItems__item .imgWrapper {
       margin-right: 30px; }
       .trendingItems__item .imgWrapper img {
@@ -492,6 +504,9 @@ nav.dropdown {
         @media only screen and (max-width: 1265px) {
           .trendingItems__item .imgWrapper img {
             width: 400px; } }
+        @media only screen and (max-width: 460px) {
+          .trendingItems__item .imgWrapper img {
+            width: 300px; } }
       @media only screen and (max-width: 920px) {
         .trendingItems__item .imgWrapper {
           margin: 0; } }
@@ -542,11 +557,19 @@ nav.dropdown {
       @media only screen and (max-width: 1265px) {
         .trendingItems__details > a {
           margin: 0 15px 0 0; } }
+      @media only screen and (max-width: 460px) {
+        .trendingItems__details > a {
+          margin-top: 10px;
+          width: 100%; } }
     .trendingItems__details ul.trendingItems__sizes {
       margin: 90px 0 30px; }
       @media only screen and (max-width: 1265px) {
         .trendingItems__details ul.trendingItems__sizes {
           margin-top: 30px; } }
+      @media only screen and (max-width: 460px) {
+        .trendingItems__details ul.trendingItems__sizes {
+          margin: 25px 0 15px;
+          text-align: center; } }
       .trendingItems__details ul.trendingItems__sizes li {
         margin-right: 30px;
         display: inline-block;
@@ -557,6 +580,11 @@ nav.dropdown {
         border-width: 1px;
         -webkit-transition: background-color 0.3s;
         transition: background-color 0.3s; }
+        @media only screen and (max-width: 460px) {
+          .trendingItems__details ul.trendingItems__sizes li {
+            margin: 0 10px;
+            height: 50px;
+            width: 50px; } }
         .trendingItems__details ul.trendingItems__sizes li a {
           display: inline-flex;
           justify-content: center;
@@ -611,7 +639,10 @@ nav.dropdown {
         width: 650px; } }
     @media only screen and (max-width: 768px) {
       .fromBlog__container {
-        width: 400px; } }
+        width: 390px; } }
+    @media only screen and (max-width: 460px) {
+      .fromBlog__container {
+        width: 280px; } }
   .fromBlog__blog {
     width: 2500px;
     transform: translateX(0);
@@ -716,6 +747,9 @@ nav.dropdown {
     text-transform: uppercase; }
   .subscribe form {
     display: inline-block; }
+    @media only screen and (max-width: 768px) {
+      .subscribe form {
+        display: flex; } }
   .subscribe input {
     height: 70px;
     width: 770px;
@@ -738,7 +772,9 @@ nav.dropdown {
         width: 500px; } }
     @media only screen and (max-width: 768px) {
       .subscribe input {
-        width: 220px; } }
+        width: 100%;
+        min-width: 195px;
+        flex: 2; } }
   .subscribe button {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
@@ -754,6 +790,11 @@ nav.dropdown {
       .subscribe button {
         margin-left: 20px;
         width: 150px; } }
+    @media only screen and (max-width: 768px) {
+      .subscribe button {
+        width: 100%;
+        padding: 10px;
+        flex: 1; } }
     .subscribe button:hover {
       background-color: rgba(0, 0, 0, 0.5);
       border: 1px solid #ffffff;

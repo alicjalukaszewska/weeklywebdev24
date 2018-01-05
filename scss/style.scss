@@ -28,14 +28,6 @@ section {
 	.container {
 		margin: 0 auto;
 		width: 1170px;
-
-		@media #{$up920}{
-			width: 880px;
-		}
-
-		@media #{$up768}{
-			width: 600px;
-		}
 	}
 
 	h2 {
@@ -62,7 +54,7 @@ section {
 			border-top: 3px $accentsColor solid;
 		}
 
-		@media #{$up768}{
+		@media #{$down920}{
 			padding: 1px 0;
 		}
 	}
@@ -101,17 +93,17 @@ section {
 			height: 90px;
 			z-index: 2;
 			
-			@media #{$up768}{
+			@media #{$down920}{
 				padding: 20px 50px;
 				width: 100%;
 			}
 		}
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			padding: 0 20px;
 			width: 100%;
 		}
-		@media #{$up768}{
+		@media #{$down920}{
 			padding: 0;
 			display: block;
 		}
@@ -122,7 +114,7 @@ section {
 		-webkit-transition: background-color 0.3s; 
 		transition: background-color 0.3s;
 		a {
-			@media #{$upRight920}{
+			@media #{$up920}{
 			color: $darkElementsColor;
 		}
 			&:hover, &:focus {
@@ -203,7 +195,7 @@ nav.dropdown {
 		}
 	}
 
-	@media #{$up768}{
+	@media #{$down920}{
 		display: none;
 	}
 }
@@ -224,7 +216,6 @@ nav.dropdown {
 	transition: .5s ease-in-out;
 	cursor: pointer;
 	
-
 	span {
 		display: block;
 		position: absolute;
@@ -282,7 +273,7 @@ nav.dropdown {
 		  left: 50%;
 		}
 	}
-	@media #{$upRight920}{
+	@media #{$up920}{
 		display: none;
 	}
 }
@@ -344,6 +335,15 @@ nav.dropdown {
 		text-transform: uppercase;
 		text-align: center;
 		white-space: nowrap;
+
+		@media #{$down920}{
+			font-size: 4.4vw;
+		}
+
+		@media #{$down768}{
+			white-space: normal;
+			font-size: 8vw;
+		}
 	}
 
 	h3 {
@@ -353,7 +353,10 @@ nav.dropdown {
 		font-size: 2.4vw;
 		text-align: center;
 		text-transform: uppercase;
-		
+		@media #{$down768}{
+			white-space: normal;
+			font-size: 3vw;
+		}
 		&.above {
 			letter-spacing: 10px;
 		}
@@ -383,12 +386,24 @@ nav.dropdown {
 		display: flex;
 		justify-content: center;
 
+		@media #{$down768}{
+			flex-direction: column;
+		}
+
 		& > div {
-			background-size: 100%;
+			background: {
+				repeat: no-repeat; 
+				position: center center;
+				size: 100%;
+			}
+			
 			transition: background-size 0.4s ease-in;
 
-			@media #{$up920}{
+			@media #{$down1265}{
 				background-size: cover;
+			}
+			@media #{$down768}{
+				background-position: center 40%;
 			}
 		}
 
@@ -396,7 +411,7 @@ nav.dropdown {
 			background-size: 105%;
 			transition: background-size 0.4s ease-in;
 
-			@media #{$up920}{
+			@media #{$down1265}{
 				background-size: cover;
 			}
 		}
@@ -408,10 +423,13 @@ nav.dropdown {
 		height: 418px;
 		width: 370px;
 		box-sizing: border-box; 
-		@media #{$up768}{
+		@media #{$down920}{
 			height: 300px;
 			width: 100%;
 			margin: 5px;
+		}
+		@media #{$down768}{
+			margin: 5px 0;
 		}
 
 		a {				
@@ -434,6 +452,9 @@ nav.dropdown {
 				text-transform: inherit;
 				font-size: 40px;
 				color: $lightElementsColor;
+				@media #{$down768}{
+					font-size: 8vw;
+				}
 			}
 
 			p {
@@ -450,7 +471,7 @@ nav.dropdown {
 				-webkit-transition: opacity 0.3s ease; 
 				transition: opacity 0.3s ease;
 				color: $lightElementsColor;
-				@media #{$up768}{
+				@media #{$down920}{
 					font-size: 12px;
 					padding: 1em;
 				}
@@ -466,7 +487,7 @@ nav.dropdown {
 					opacity: 1;
 					-webkit-transition: opacity 0.6s; 
 					transition: opacity 0.6s;
-					@media #{$up768}{
+					@media #{$down920}{
 						bottom: 5px;
 					}
 				}
@@ -474,30 +495,21 @@ nav.dropdown {
 		}
 
 		&.man-collection {
-			background: {
-				image: 
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/man.jpg'); 
-				repeat: no-repeat; 
-				position: center center;
-			}
 		}
 		&.woman-collection {
-			background: {
-				image: 
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/woman.jpg'); 
-				repeat: no-repeat;
-				position: center center;
-			} 
 		}
 		&.watches-collection {
-			background: {
-				image: 
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/watch.jpg'); 
-				repeat: no-repeat; 
-				position: center center;
+			@media #{$down768}{
+				background-position: center center;
 			}
 		}		
 
@@ -516,10 +528,13 @@ nav.dropdown {
 		height: 418px;
 		width: 570px;
 		box-sizing: border-box;
-		@media #{$up768}{
+		@media #{$down920}{
 			height: 300px;
 			width: 100%;
 			margin: 5px;
+		}
+		@media #{$down768}{
+			margin: 5px 0;
 		}
 
 		a {
@@ -536,6 +551,9 @@ nav.dropdown {
 			font-size: 45px;
 			font-size: 4vw;
 			font-style: normal;
+			@media #{$down768}{
+				font-size: 7vw;
+			}
 
 			&:before, &:after {
 				margin: 30px auto;
@@ -568,22 +586,14 @@ nav.dropdown {
 		}
 
 		&.autumn-collection {
-			background: {
-				image: 
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/autumn.jpg'); 
-				repeat: no-repeat; 
-				position: center center;
-			}
 		}
 		&.spirit-collection {
-			background: {
-				image: 
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/spirit.jpg'); 
-				repeat: no-repeat; 
-				position: center center;
-			}
 		}	
 	}
 }
@@ -609,12 +619,20 @@ nav.dropdown {
 		overflow: hidden;
 		width: 1170px;
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			width: 880px;
 		}
 
-		@media #{$up768}{
+		@media #{$down920}{
 			width: 600px;
+		}
+
+		@media #{$down768}{
+			width: 400px;
+			align-items: normal;
+		}
+		@media #{$down768}{
+			background-position: center center;
 		}
 	}
 
@@ -632,7 +650,7 @@ nav.dropdown {
 				white-space: normal;
 				display: flex;
 
-				@media #{$up768}{
+				@media #{$down920}{
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
@@ -646,29 +664,33 @@ nav.dropdown {
 				max-width: 570px;
 				height: auto;
 				max-height: 570px;
-				@media #{$up920}{
+				@media #{$down1265}{
 					width: 400px;
 				}			
+			}
+
+			@media #{$down920}{
+				margin: 0;
 			}
 		}
 	}
 
 	&__details {
 		width: 100%;
-			@media #{$up920}{
+			@media #{$down1265}{
 				max-width: 400px;
 			}
 
-			@media #{$up768}{
+			@media #{$down920}{
 				width: 100%;
 			}
 
 		h3 {
-			@media #{$up920}{
+			@media #{$down1265}{
 				margin: 0 0 10px;
 			}
 
-			@media #{$up768}{
+			@media #{$down920}{
 				margin: 20px 0 10px;
 			}
 		}
@@ -685,7 +707,7 @@ nav.dropdown {
 				display: block;
 				border-top: 1px black solid;
 
-				@media #{$up920}{
+				@media #{$down1265}{
 					margin: 15px 0;
 				}
 			}
@@ -715,14 +737,14 @@ nav.dropdown {
 				transition: background-color 0.3s;
 			}				
 
-			@media #{$up920}{
+			@media #{$down1265}{
 					margin: 0 15px 0 0;
 				}
 		}	
 
 		ul.trendingItems__sizes {
 			margin: 90px 0 30px;
-			@media #{$up920}{
+			@media #{$down1265}{
 				margin-top: 30px;
 			}
 			li {
@@ -807,8 +829,17 @@ nav.dropdown {
 		width: 1170px;
 		overflow: hidden;
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			width: 860px;
+		}
+
+		@media #{$down920}{
+			width: 650px;
+		}
+
+		@media #{$down768}{
+			width: 400px;
+			// align-items: normal;
 		}
 	}
 
@@ -896,7 +927,7 @@ nav.dropdown {
 		align-self: center;
 		font-size: 50px;
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			max-width: 1000px;
 		}
 
@@ -938,6 +969,23 @@ nav.dropdown {
 		position: center center;
 	}
 
+	.container {
+
+		@media #{$down1265}{
+			width: 880px;
+		}
+
+		@media #{$down920}{
+			width: 700px;
+		}
+		@media #{$down768}{
+			width: 400px;
+		}
+		
+		@media #{$down768}{
+			width: 100%;
+		}
+	}
 	p {
 		margin-bottom: 30px;
 		font-family: 'Open Sans', sans-serif;
@@ -967,12 +1015,16 @@ nav.dropdown {
 		font-size: 13px;
 		text-transform: uppercase;
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			width: 560px;
 		}
 
-		@media #{$up768}{
-			width: 400px;
+		@media #{$down920}{
+			width: 500px;
+		}
+
+		@media #{$down768}{
+			width: 220px;
 		}
 	}
 
@@ -984,12 +1036,12 @@ nav.dropdown {
 		height: 70px;
 		width: 270px;
 
-		@media #{$up920}{
+		@media #{$down1265}{
 			margin-left: 50px;
 			width: 200px;
 		}
 
-		@media #{$up768}{
+		@media #{$down920}{
 			margin-left: 20px;
 			width: 150px;
 		}
@@ -1013,7 +1065,7 @@ body > footer {
 	justify-content: center;
 	align-items: center;
 
-	@media #{$up768}{
+	@media #{$down920}{
 		height: 60px;
 	}
 

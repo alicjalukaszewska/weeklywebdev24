@@ -139,7 +139,7 @@ function changeBlogItem () {
 	//check which arrow was clicked
 	if (this.id == 'nextPost'){
 		//stop on last item
-		if (currentX == width * (itemBlog.length - 2)) {
+		if (currentX == width * (itemBlog.length - 1)) {
 			disableArrow(this, prevPost);
 			return;
 		}

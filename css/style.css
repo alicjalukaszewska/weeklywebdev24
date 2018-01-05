@@ -21,12 +21,6 @@ section {
   section .container {
     margin: 0 auto;
     width: 1170px; }
-    @media only screen and (max-width: 1265px) {
-      section .container {
-        width: 880px; } }
-    @media only screen and (max-width: 920px) {
-      section .container {
-        width: 600px; } }
   section h2 {
     padding: 30px 0;
     color: #333333;
@@ -251,6 +245,13 @@ nav.dropdown {
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap; }
+    @media only screen and (max-width: 920px) {
+      .mainHeader h2 {
+        font-size: 4.4vw; } }
+    @media only screen and (max-width: 768px) {
+      .mainHeader h2 {
+        white-space: normal;
+        font-size: 8vw; } }
   .mainHeader h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -258,6 +259,10 @@ nav.dropdown {
     font-size: 2.4vw;
     text-align: center;
     text-transform: uppercase; }
+    @media only screen and (max-width: 768px) {
+      .mainHeader h3 {
+        white-space: normal;
+        font-size: 3vw; } }
     .mainHeader h3.above {
       letter-spacing: 10px; }
   .mainHeader a.shop {
@@ -277,12 +282,20 @@ nav.dropdown {
 .latestProducts__collections, .latestProducts__currentSales {
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 768px) {
+    .latestProducts__collections, .latestProducts__currentSales {
+      flex-direction: column; } }
   .latestProducts__collections > div, .latestProducts__currentSales > div {
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: 100%;
     transition: background-size 0.4s ease-in; }
     @media only screen and (max-width: 1265px) {
       .latestProducts__collections > div, .latestProducts__currentSales > div {
         background-size: cover; } }
+    @media only screen and (max-width: 768px) {
+      .latestProducts__collections > div, .latestProducts__currentSales > div {
+        background-position: center 40%; } }
   .latestProducts__collections > div:hover, .latestProducts__currentSales > div:hover {
     background-size: 105%;
     transition: background-size 0.4s ease-in; }
@@ -301,6 +314,9 @@ nav.dropdown {
       height: 300px;
       width: 100%;
       margin: 5px; } }
+  @media only screen and (max-width: 768px) {
+    .latestProducts__product {
+      margin: 5px 0; } }
   .latestProducts__product a {
     position: relative;
     top: 0;
@@ -320,6 +336,9 @@ nav.dropdown {
       text-transform: inherit;
       font-size: 40px;
       color: #ffffff; }
+      @media only screen and (max-width: 768px) {
+        .latestProducts__product a h3 {
+          font-size: 8vw; } }
     .latestProducts__product a p {
       position: absolute;
       padding: 2em;
@@ -351,17 +370,14 @@ nav.dropdown {
           .latestProducts__product a:hover p {
             bottom: 5px; } }
   .latestProducts__product.man-collection {
-    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/man.jpg");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/man.jpg"); }
   .latestProducts__product.woman-collection {
-    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/woman.jpg");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/woman.jpg"); }
   .latestProducts__product.watches-collection {
-    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/watch.jpg");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/watch.jpg"); }
+    @media only screen and (max-width: 768px) {
+      .latestProducts__product.watches-collection {
+        background-position: center center; } }
   .latestProducts__product .innerBorder {
     background-color: transparent;
     height: 100%;
@@ -380,6 +396,9 @@ nav.dropdown {
       height: 300px;
       width: 100%;
       margin: 5px; } }
+  @media only screen and (max-width: 768px) {
+    .latestProducts__sales {
+      margin: 5px 0; } }
   .latestProducts__sales a {
     display: inline-flex;
     flex-direction: column;
@@ -394,6 +413,9 @@ nav.dropdown {
     font-size: 45px;
     font-size: 4vw;
     font-style: normal; }
+    @media only screen and (max-width: 768px) {
+      .latestProducts__sales a {
+        font-size: 7vw; } }
     .latestProducts__sales a:before, .latestProducts__sales a:after {
       margin: 30px auto;
       display: block;
@@ -412,13 +434,9 @@ nav.dropdown {
       transform: translateX(-40px) scale(1.2, 1);
       transition: transform 0.4s ease-in; }
   .latestProducts__sales.autumn-collection {
-    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/autumn.jpg");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/autumn.jpg"); }
   .latestProducts__sales.spirit-collection {
-    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/spirit.jpg");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/spirit.jpg"); }
 
 /*Trending Items section */
 .trendingItems {
@@ -442,6 +460,13 @@ nav.dropdown {
     @media only screen and (max-width: 920px) {
       .trendingItems__itemsContainer {
         width: 600px; } }
+    @media only screen and (max-width: 768px) {
+      .trendingItems__itemsContainer {
+        width: 400px;
+        align-items: normal; } }
+    @media only screen and (max-width: 768px) {
+      .trendingItems__itemsContainer {
+        background-position: center center; } }
   .trendingItems__item {
     display: inline-flex;
     width: 5000px;
@@ -467,6 +492,9 @@ nav.dropdown {
         @media only screen and (max-width: 1265px) {
           .trendingItems__item .imgWrapper img {
             width: 400px; } }
+      @media only screen and (max-width: 920px) {
+        .trendingItems__item .imgWrapper {
+          margin: 0; } }
   .trendingItems__details {
     width: 100%; }
     @media only screen and (max-width: 1265px) {
@@ -578,6 +606,12 @@ nav.dropdown {
     @media only screen and (max-width: 1265px) {
       .fromBlog__container {
         width: 860px; } }
+    @media only screen and (max-width: 920px) {
+      .fromBlog__container {
+        width: 650px; } }
+    @media only screen and (max-width: 768px) {
+      .fromBlog__container {
+        width: 400px; } }
   .fromBlog__blog {
     width: 2500px;
     transform: translateX(0);
@@ -662,6 +696,18 @@ nav.dropdown {
   background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/subscriptionbg.jpg");
   background-size: cover;
   background-position: center center; }
+  @media only screen and (max-width: 1265px) {
+    .subscribe .container {
+      width: 880px; } }
+  @media only screen and (max-width: 920px) {
+    .subscribe .container {
+      width: 700px; } }
+  @media only screen and (max-width: 768px) {
+    .subscribe .container {
+      width: 400px; } }
+  @media only screen and (max-width: 768px) {
+    .subscribe .container {
+      width: 100%; } }
   .subscribe p {
     margin-bottom: 30px;
     font-family: 'Open Sans', sans-serif;
@@ -689,7 +735,10 @@ nav.dropdown {
         width: 560px; } }
     @media only screen and (max-width: 920px) {
       .subscribe input {
-        width: 400px; } }
+        width: 500px; } }
+    @media only screen and (max-width: 768px) {
+      .subscribe input {
+        width: 220px; } }
   .subscribe button {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;

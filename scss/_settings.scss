@@ -11,7 +11,9 @@ $gradientOverlay: rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7);
 $gradientOverlayHover: rgba(34, 37, 51, 0.7), rgba(255, 255, 255, 0.2);
 $gradientSliderOverlay: rgba(34, 37, 51, 0.4), rgba(34, 37, 51, 0.4);
 
-$upRight920: "only screen and (min-width: 920px)";
-$up768: "only screen and (max-width: 920px)";
-$up920: "only screen and (max-width: 1265px)";
-$up1280: "only screen and (min-width: 1265px)"; 
+$down665: "only screen and (max-width: 665px)";
+$down768: "only screen and (max-width: 768px)";
+$up920: "only screen and (min-width: 920px)";
+$down920: "only screen and (max-width: 920px)";
+$down1265: "only screen and (max-width: 1265px)";
+$up1265: "only screen and (min-width: 1265px)"; 

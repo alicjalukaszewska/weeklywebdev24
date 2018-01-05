@@ -18,3 +18,42 @@ $up920: "only screen and (min-width: 920px)";
 $down920: "only screen and (max-width: 920px)";
 $down1265: "only screen and (max-width: 1265px)";
 $up1265: "only screen and (min-width: 1265px)"; 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-800px);
+        transform: translateY(-800px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@mixin fadeIn {
+	animation-name: fadeIn;
+	animation-duration: 0.8s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-800px);
+        transform: translateY(-800px)
+    }
+}
+
+@mixin fadeOut {
+	animation-name: fadeOut;
+	animation-duration: 0.8s;
+}
+

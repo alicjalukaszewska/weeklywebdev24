@@ -1,3 +1,23 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-800px);
+    transform: translateY(-800px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-800px);
+    transform: translateY(-800px); } }
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +38,9 @@ body {
 
 section {
   margin-bottom: 60px; }
+  @media only screen and (max-width: 768px) {
+    section {
+      margin-bottom: 10px; } }
   section .container {
     margin: 0 auto;
     width: 1170px; }
@@ -104,7 +127,9 @@ section {
 /* Dropdown menu */
 nav.dropdown {
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+  animation-name: fadeOut;
+  animation-duration: 0.8s; }
   nav.dropdown li {
     display: inline-block;
     margin-right: 70px; }
@@ -129,18 +154,20 @@ nav.dropdown {
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    animation-name: fadeIn;
+    animation-duration: 0.8s; }
     nav.dropdown.dropped ul {
-      width: 100%; }
+      width: 100%;
+      box-sizing: content-box; }
       nav.dropdown.dropped ul li {
         margin: 0;
         border-top: 2px solid #dc0000;
-        width: 100%;
-        height: 100px;
-        box-sizing: content-box; }
+        width: 100%; }
         nav.dropdown.dropped ul li:first-child {
           border: 0; }
         nav.dropdown.dropped ul li a {
+          padding: 25px 0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -258,6 +285,10 @@ nav.dropdown {
       .mainHeader h2 {
         white-space: normal;
         font-size: 8vw; } }
+    @media only screen and (max-width: 460px) {
+      .mainHeader h2 {
+        padding: 10px;
+        font-size: 10vw; } }
   .mainHeader h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -271,7 +302,8 @@ nav.dropdown {
         font-size: 3vw; } }
     @media only screen and (max-width: 460px) {
       .mainHeader h3 {
-        font-size: 3.8vw; } }
+        padding: 10px;
+        font-size: 3.7vw; } }
     .mainHeader h3.above {
       letter-spacing: 10px; }
   .mainHeader a.shop {
@@ -477,7 +509,6 @@ nav.dropdown {
       .trendingItems__itemsContainer {
         width: 300px; } }
   .trendingItems__item {
-    display: inline-flex;
     width: 5000px;
     transform: translateX(0);
     transition: transform 0.8s ease-in-out; }
@@ -491,10 +522,11 @@ nav.dropdown {
         .trendingItems__item div.content {
           flex-direction: column;
           justify-content: center;
-          align-items: center; } }
+          align-items: center;
+          padding: 0 5px; } }
       @media only screen and (max-width: 460px) {
         .trendingItems__item div.content {
-          padding: 10px; } }
+          padding: 0 20px; } }
     .trendingItems__item .imgWrapper {
       margin-right: 30px; }
       .trendingItems__item .imgWrapper img {
@@ -539,28 +571,6 @@ nav.dropdown {
             margin: 15px 0; } }
     .trendingItems__details p.tip {
       padding-top: 35px; }
-    .trendingItems__details > a {
-      margin-right: 30px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      height: 50px;
-      width: 170px;
-      border-style: solid;
-      border-color: #333333;
-      border-width: 1px; }
-      .trendingItems__details > a:hover, .trendingItems__details > a:focus {
-        background-color: #333333;
-        color: #ffffff;
-        -webkit-transition: background-color 0.3s;
-        transition: background-color 0.3s; }
-      @media only screen and (max-width: 1265px) {
-        .trendingItems__details > a {
-          margin: 0 15px 0 0; } }
-      @media only screen and (max-width: 460px) {
-        .trendingItems__details > a {
-          margin-top: 10px;
-          width: 100%; } }
     .trendingItems__details ul.trendingItems__sizes {
       margin: 90px 0 30px; }
       @media only screen and (max-width: 1265px) {
@@ -580,9 +590,12 @@ nav.dropdown {
         border-width: 1px;
         -webkit-transition: background-color 0.3s;
         transition: background-color 0.3s; }
+        @media only screen and (max-width: 768px) {
+          .trendingItems__details ul.trendingItems__sizes li {
+            margin: 0 10px; } }
         @media only screen and (max-width: 460px) {
           .trendingItems__details ul.trendingItems__sizes li {
-            margin: 0 10px;
+            margin: 0 5px;
             height: 50px;
             width: 50px; } }
         .trendingItems__details ul.trendingItems__sizes li a {
@@ -603,6 +616,34 @@ nav.dropdown {
           transition: background-color 0.3s; }
           .trendingItems__details ul.trendingItems__sizes li.active a:hover, .trendingItems__details ul.trendingItems__sizes li.active a:focus {
             background-color: #333333; }
+    .trendingItems__details > a {
+      margin-right: 30px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 170px;
+      border-style: solid;
+      border-color: #333333;
+      border-width: 1px; }
+      .trendingItems__details > a.buyItem {
+        background-color: #333333;
+        color: #ffffff; }
+        .trendingItems__details > a.buyItem:hover, .trendingItems__details > a.buyItem:focus {
+          background-color: #878787;
+          color: #ffffff; }
+      .trendingItems__details > a:hover, .trendingItems__details > a:focus {
+        background-color: #333333;
+        color: #ffffff;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s; }
+      @media only screen and (max-width: 1265px) {
+        .trendingItems__details > a {
+          margin: 0 15px 0 0; } }
+      @media only screen and (max-width: 460px) {
+        .trendingItems__details > a {
+          margin-top: 10px;
+          width: 100%; } }
   .trendingItems ul.chooseItem {
     margin-top: 45px;
     bottom: 0;
@@ -644,7 +685,7 @@ nav.dropdown {
       .fromBlog__container {
         width: 280px; } }
   .fromBlog__blog {
-    width: 2500px;
+    width: 5000px;
     transform: translateX(0);
     transition: transform 0.8s ease-in; }
   .fromBlog__item {

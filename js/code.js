@@ -1,5 +1,6 @@
 
-// //Show transparent background under menu
+/* Fixed navbar styling */
+
 function changeMenu() {
 	const menu = document.querySelector('.top-menu');
 	if (window.scrollY == 0){
@@ -11,19 +12,8 @@ function changeMenu() {
 
 window.addEventListener('scroll', changeMenu);
 
-//change style of active element
 
-const element = document.querySelectorAll('li');
-function changeActive() {
-	element.forEach(li => li.classList.remove('active'));
-	this.classList.add('active');
-}
-
-element.forEach(li => li.addEventListener('click', changeActive));
-
-
-
-// Trending Items slider
+/* Trending Items slider */
 
 const links = document.querySelectorAll('.chooseItem li');
 const trendingItemSection = document.querySelector('.trendingItems');
@@ -60,6 +50,8 @@ function getItemPosition () {
 //onclick change visible item
 function changeTrendingItem () {
 	active = this;
+	links.forEach(link => link.classList.remove('active'));
+	this.classList.add('active');
 	const currentPosition = this.getAttribute("data-pos");
 	currentItemWrapper.style.transform = (`translateX(${currentPosition})`);
 }
@@ -70,16 +62,13 @@ function changeItemInTime () {
 	let firstItem = links[0];
 	//if lastItem return to first
 	if (active === lastItem) {
-		firstItem.classList.add('active');
 		active = firstItem;
 	} else {
-		active.nextElementSibling.classList.add('active');
 		active = active.nextElementSibling;
 	}
 	active.classList.remove('active');
 	active.click();	
 }
-
 
 window.addEventListener('load', getItemPosition);
 window.addEventListener('resize', getItemPosition);
@@ -91,13 +80,13 @@ trendingItemSection.addEventListener('mouseover', function() {
 	showItem = 0;
 })
 
-// trendingItemSection.addEventListener('mouseout', function() {
-// 	showItem = setInterval(changeItemInTime, 5000);
-// })
+trendingItemSection.addEventListener('mouseout', function() {
+	showItem = setInterval(changeItemInTime, 5000);
+})
 
 
+/* Blog slider */
 
-// //Blog slider
 const prevPost = document.querySelector('#prevPost');
 const nextPost = document.querySelector('#nextPost');
 const itemBlog = document.querySelectorAll('.fromBlog__item');
@@ -117,7 +106,6 @@ function getBlogItemWidth() {
 	itemBlog.forEach(note => note.style.width = itemWidth + 'px')
 	return itemWidth;
 }
-
 
 function disableArrow (arrow, secondArrow) {
 	arrow.disable = true;
@@ -164,13 +152,16 @@ function changeBlogItem () {
 window.addEventListener('load', () => { 
 		getBlogWrapperWidth();
 		getBlogItemWidth();
-	});
-window.addEventListener('resize', getBlogItemWidth);
+});
+window.addEventListener('resize', () => { 
+		getBlogWrapperWidth();
+		getBlogItemWidth();
+});
 
 prevPost.addEventListener('click', changeBlogItem);
 nextPost.addEventListener('click', changeBlogItem);
 
-//dropdown menu
+/* dropdown menu */
 
 const dropdownBtn = document.querySelector('#nav-icon');
 const menu = document.querySelector('nav.dropdown');

@@ -113,17 +113,20 @@ function disableArrow (arrow, secondArrow) {
 	secondArrow.addEventListener('click', changeBlogItem);
 }
 
+//get current translateX value
+function getCurrentTranslateX () {
+	let getTranslateX = window.getComputedStyle(blogWrapper);
+	let matrix = new WebKitCSSMatrix(getTranslateX.webkitTransform);
+	return matrix.m41;
+}
+
 function changeBlogItem () {
 	//prevent user to click arrows during transition
 	prevPost.removeEventListener('click', changeBlogItem);
 	nextPost.removeEventListener('click', changeBlogItem);
-
 	//get width of blog items
 	let width = -(getBlogItemWidth());
-	//get current translateX value
-	let getTranslateX = window.getComputedStyle(blogWrapper);
-	var matrix = new WebKitCSSMatrix(getTranslateX.webkitTransform);
-	currentX = matrix.m41;
+	let currentX = getCurrentTranslateX();
 	//check which arrow was clicked
 	if (this.id == 'nextPost'){
 		//stop on last item

@@ -8,7 +8,7 @@
 	<title>Brand LY - Weekly Web Dev Challenge 24</title>
 </head>
 <body>			
-	<div class="top-menu">
+	<nav class="top-menu">
 		<div class="containerHeader">
 			<div class="head">
 				<a href="index.html"><img src="img/logo.png" alt=""></a>
@@ -30,7 +30,7 @@
 				</ul>
 			</nav>
 		</div>
-	</div>
+	</nav>
 	<header class="mainHeader">
 		<h3 class="above">Spring / Summer Collection</h3>
 			<h2>up to 60% discount on new arrivals</h2>
@@ -255,7 +255,7 @@
 			<div class="container">
 				<p>SUBSCRIBE TO OUR NEWSLETTER TO RECEIVE LATEST NEWS AND OFFERS</p>
 				<form action="" class="subscribe-form">
-					<input placeholder="Email address" type="email" required pattern="[a-z0-9._%+-]+@ [a-z0-9.-]+.[a-z]{2,4}$" title="Email should contains letters, numbers or special characters: . and _ ">
+					<input placeholder="Email address" type="email" required pattern="^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}$"  title="Email should contains letters, numbers or special characters: . and _ ">
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>

@@ -2,12 +2,12 @@
 
 * {
 	margin: 0;
-	padding: 0;
+	padding: 0;	
+	-webkit-box-sizing: border-box;	
+	        box-sizing: border-box;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
-	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
 }
@@ -37,10 +37,12 @@ section {
 	h2 {
 		padding: 30px 0;
 		color: $darkElementsColor;
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300;
-		font-style: italic;
-		font-size: 40px;
+		font: {
+			family: 'Open Sans', sans-serif;
+			size: 40px;
+			style: italic;
+			weight: 300;
+		}
 		text-align: center;		
 
 		&:before, &:after {
@@ -67,12 +69,14 @@ section {
 	}
 
 	h3 {
-		color: $accentsColor;
-		text-transform: uppercase;
-		font-family: 'Lato', sans-serif;
-		font-size: 30px;
-		font-weight: 700; //bold
 		margin: 30px 0;
+		color: $accentsColor;
+		font: {
+			family: 'Lato', sans-serif;
+			size: 30px;
+			weight: 700; /*bold*/
+		}
+		text-transform: uppercase;
 		@media #{$down460}{
 			font-size: 26px;
 		}	
@@ -81,25 +85,37 @@ section {
 
 .top-menu {
 	position: fixed;
+	z-index: 1;
 	margin: 0 auto;
 	width: 100%;
-	z-index: 1;
-	-webkit-transition: background-color 0.3s; 
+	-webkit-transition: background-color 0.3s;
 	transition: background-color 0.3s;
 
 	& .containerHeader {	
 		margin: 0 auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		height: 90px;
 		max-width: 1170px;
 		width: 100%;
 		
 		& .head {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
 			height: 90px;
 			z-index: 2;
 			
@@ -141,7 +157,6 @@ section {
 nav.dropdown {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
-	@include fadeOut;
 
 	li {
 		display: inline-block;
@@ -172,19 +187,26 @@ nav.dropdown {
 		z-index: -10;
 		text-align: center;
 		text-transform: uppercase;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;				
-		align-items: center;
-		justify-content: center;
+		-webkit-box-align: center;				
+		    -ms-flex-align: center;				
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		@include fadeIn;
 
 		ul {
 			width: 100%;
-			box-sizing: content-box;
+			-webkit-box-sizing: content-box;
+			        box-sizing: content-box;
 		
 			li {
 				margin: 0;
-				border-top: 2px solid $accentsColor;
 				width: 100%;
+				border-top: 2px solid $accentsColor;
 
 				&:first-child {
 					border: 0;
@@ -192,9 +214,15 @@ nav.dropdown {
 
 				a {
 					padding: 25px 0;
+					display: -webkit-box;
+					display: -ms-flexbox;
 					display: flex;				
-					align-items: center;
-					justify-content: center;
+					-webkit-box-align: center;				
+					    -ms-flex-align: center;				
+					        align-items: center;
+					-webkit-box-pack: center;
+					    -ms-flex-pack: center;
+					        justify-content: center;
 					width: 100%;
 					height: 100%;
 
@@ -218,12 +246,8 @@ nav.dropdown {
 	height: 45px;
 	position: relative;
 	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
 	transform: scale(0.8) rotate(0deg);
 	-webkit-transition: .5s ease-in-out;
-	-moz-transition: .5s ease-in-out;
-	-o-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
 	cursor: pointer;
 	
@@ -237,12 +261,8 @@ nav.dropdown {
 		opacity: 1;
 		left: 0;
 		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
 		transform: rotate(0deg);
 		-webkit-transition: .25s ease-in-out;
-		-moz-transition: .25s ease-in-out;
-		-o-transition: .25s ease-in-out;
 		transition: .25s ease-in-out;
 
 		&:nth-child(1) {
@@ -266,15 +286,11 @@ nav.dropdown {
 
 		&:nth-child(2) {
 			-webkit-transform: rotate(45deg);
-			-moz-transform: rotate(45deg);
-			-o-transform: rotate(45deg);
 			transform: rotate(45deg);
 		}
 
 		&:nth-child(3) {
 			-webkit-transform: rotate(-45deg);
-			-moz-transform: rotate(-45deg);
-			-o-transform: rotate(-45deg);
 			transform: rotate(-45deg);
 		}
 
@@ -294,10 +310,19 @@ nav.dropdown {
 /* Header with slider */
 .mainHeader {
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin: 0 auto;
 	padding-top: 90px;
 	height: 100vh;
@@ -340,7 +365,7 @@ nav.dropdown {
 		padding: 30px;		
 		font-size: 60px;
 		font-size: 4.6vw;		
-		font-weight: 900; //black
+		font-weight: 900; /*black*/
 		text-transform: uppercase;
 		text-align: center;
 		white-space: nowrap;
@@ -380,9 +405,9 @@ nav.dropdown {
 	}
 
 	a.shop {
-		border: 2px $lightElementsColor solid;
 		margin-top: 30px;
 		padding: 20px 50px;
+		border: 2px $lightElementsColor solid;
 		color: $lightElementsColor;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -400,11 +425,18 @@ nav.dropdown {
 
 .latestProducts {
 	&__collections, &__currentSales {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 
 		@media #{$down768}{
-			flex-direction: column;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
 		}
 
 		& > div {
@@ -413,7 +445,7 @@ nav.dropdown {
 				position: center center;
 				size: 100%;
 			}
-			
+			-webkit-transition: background-size 0.4s ease-in;
 			transition: background-size 0.4s ease-in;
 
 			@media #{$down1265}{
@@ -426,6 +458,7 @@ nav.dropdown {
 
 		& > div:hover {
 			background-size: 105%;
+			-webkit-transition: background-size 0.4s ease-in;
 			transition: background-size 0.4s ease-in;
 
 			@media #{$down1265}{
@@ -439,7 +472,8 @@ nav.dropdown {
 		padding: 30px;
 		height: 418px;
 		width: 370px;
-		box-sizing: border-box; 
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box; 
 		@media #{$down920}{
 			height: 300px;
 			width: 100%;
@@ -451,24 +485,34 @@ nav.dropdown {
 
 		a {				
 			position: relative;		
-			top: 0;
-			transition: top 0.8s ease;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
 			margin: 0 auto;
+			top: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
 			width: 100%;
 			height: 100%;
 			color: inherit;				
 			font-family: 'Open Sans', sans-serif;
 			font-style: italic;
-			text-align: center;
+			text-align: center;			
+			-webkit-transition: top 0.8s ease;
+			transition: top 0.8s ease;
 
 			h3 {
+				color: $lightElementsColor;
 				text-transform: inherit;
 				font-size: 40px;
-				color: $lightElementsColor;
 				@media #{$down768}{
 					font-size: 8vw;
 				}
@@ -477,17 +521,17 @@ nav.dropdown {
 			p {
 				position: absolute;
 				padding: 2em;
-				opacity: 0;
 				bottom: 0;
 				left: 0;
 				width: 100%;
+				color: $lightElementsColor;
+				opacity: 0;
 				text-transform: uppercase;
-				font-size: 14px;
+				font-size: 14px;				
 				-webkit-transition: bottom 0.3s ease; 
 				transition: bottom 0.3s ease;
 				-webkit-transition: opacity 0.3s ease; 
 				transition: opacity 0.3s ease;
-				color: $lightElementsColor;
 				@media #{$down920}{
 					font-size: 12px;
 					padding: 1em;
@@ -496,10 +540,12 @@ nav.dropdown {
 
 			&:hover {
 				top: -40px;
+				-webkit-transition: top 0.6s ease;
 				transition: top 0.6s ease;
 
 				p {
 					bottom: 20px;
+					-webkit-transition: bottom 0.6s ease;
 					transition: bottom 0.6s ease;
 					opacity: 1;
 					-webkit-transition: opacity 0.6s; 
@@ -513,15 +559,24 @@ nav.dropdown {
 
 		&.man-collection {
 			background-image:
+					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
+					url('../img/man.jpg');
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/man.jpg'); 
 		}
 		&.woman-collection {
 			background-image:
+					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
+					url('../img/woman.jpg');
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/woman.jpg'); 
 		}
 		&.watches-collection {
+			background-image:
+					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
+					url('../img/watch.jpg');
 			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/watch.jpg'); 
@@ -531,7 +586,6 @@ nav.dropdown {
 		}		
 
 		.innerBorder {
-			background-color: transparent;
 			height: 100%;
 			border: 1px $lightElementsColor solid;
 		}
@@ -539,37 +593,60 @@ nav.dropdown {
 
 	&__sales {
 		margin: 15px 15px 0 15px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		height: 418px;
 		width: 570px;
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
 		@media #{$down920}{
+			margin: 5px;
 			height: 300px;
 			width: 100%;
-			margin: 5px;
+			
 		}
 		@media #{$down768}{
 			margin: 5px 0;
 		}
 
 		a {
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
 			display: inline-flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
 			height: 100%;
 			width: 100%;
 			color: $lightElementsColor;
 			text-align: center;
-			font-family: 'Lato', sans-serif;
-			font-weight: 900; //black
-			font-size: 45px;
-			font-size: 4vw;
-			font-style: normal;
+			font: {
+				family: 'Lato', sans-serif;
+				weight: 900; /*black*/
+				size: 45px;
+				size: 4vw;
+				style: normal;
+			}
+			@media #{$up1265}{
+				font-size: 50px;
+			}
 			@media #{$down768}{
-				font-size: 7vw;
+				font-size: 36px;
+				 font-size: 7vw;
 			}
 
 			&:before, &:after {
@@ -581,22 +658,36 @@ nav.dropdown {
 
 			&:before {
 				border-bottom: 1px $lightElementsColor solid;
+				-webkit-transition: -webkit-transform 0.4s ease-in;
+				transition: -webkit-transform 0.4s ease-in;
 				transition: transform 0.4s ease-in;
+				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			}
 
 			&:after {
 				border-top: 1px $lightElementsColor solid;
+				-webkit-transition: -webkit-transform 0.4s ease-in;
+				transition: -webkit-transform 0.4s ease-in;
 				transition: transform 0.4s ease-in;
+				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			}
 
 			&:hover:before {
-				transform: translateX(40px) scale(1.2, 1);
+				-webkit-transform: translateX(40px) scale(1.2, 1);
+				        transform: translateX(40px) scale(1.2, 1);
+				-webkit-transition: -webkit-transform 0.4s ease-in;
+				transition: -webkit-transform 0.4s ease-in;
 				transition: transform 0.4s ease-in;
+				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			} 
 
 			&:hover:after {
-				transform: translateX(-40px) scale(1.2, 1);
+				-webkit-transform: translateX(-40px) scale(1.2, 1);
+				        transform: translateX(-40px) scale(1.2, 1);
+				-webkit-transition: -webkit-transform 0.4s ease-in;
+				transition: -webkit-transform 0.4s ease-in;
 				transition: transform 0.4s ease-in;
+				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			} 
 
 
@@ -604,10 +695,16 @@ nav.dropdown {
 
 		&.autumn-collection {
 			background-image:
+					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
+					url('../img/autumn.jpg');
+			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/autumn.jpg'); 
 		}
 		&.spirit-collection {
+			background-image:
+					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
+					url('../img/spirit.jpg');
 			background-image:
 					linear-gradient($gradientOverlay), 
 					url('../img/spirit.jpg'); 
@@ -625,9 +722,11 @@ nav.dropdown {
 
 	a {
 		color: $darkElementsColor;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 16px;
-		font-weight: bold;
+		font: {
+			family: 'Open Sans', sans-serif;
+			size: 16px;
+			weight: bold;
+		}
 		text-transform: uppercase;
 	}
 
@@ -646,7 +745,9 @@ nav.dropdown {
 
 		@media #{$down768}{
 			width: 400px;
-			align-items: normal;
+			-webkit-box-align: normal;
+			    -ms-flex-align: normal;
+			        align-items: normal;
 		}
 		@media #{$down460}{
 			width: 300px;
@@ -654,25 +755,39 @@ nav.dropdown {
 	}
 
 	&__item {
-		// display: inline-flex;
+		/* display: inline-flex;*/
 		width: 5000px;
-		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+		-webkit-transition: -webkit-transform 0.8s ease-in-out;
+		transition: -webkit-transform 0.8s ease-in-out;
 		transition: transform 0.8s ease-in-out;
+		transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 
 		div {
 			&.content {
-				float: left;
-				width: 1170px; //initial width
+				float: left;				
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				width: 1170px; /*initial width*/
 				height: auto;
 				white-space: normal;
-				display: flex;
+
 
 				@media #{$down920}{
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
 					padding: 0 5px;
-				}
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					    -ms-flex-direction: column;
+					        flex-direction: column;
+					-webkit-box-pack: center;
+					    -ms-flex-pack: center;
+					        justify-content: center;
+					-webkit-box-align: center;
+					    -ms-flex-align: center;
+					        align-items: center;
+					}
 
 				@media #{$down460}{
 					padding: 0 20px;
@@ -683,9 +798,9 @@ nav.dropdown {
 		.imgWrapper {
 			margin-right: 30px;
 			img {
-				max-width: 570px;
 				height: auto;
 				max-height: 570px;
+				max-width: 570px;
 				@media #{$down1265}{
 					width: 400px;
 				}	
@@ -702,13 +817,14 @@ nav.dropdown {
 
 	&__details {
 		width: 100%;
-			@media #{$down1265}{
-				max-width: 400px;
-			}
 
-			@media #{$down920}{
-				width: 100%;
-			}
+		@media #{$down1265}{
+			max-width: 400px;
+		}
+
+		@media #{$down920}{
+			width: 100%;
+		}
 
 		h3 {
 			@media #{$down1265}{
@@ -721,16 +837,18 @@ nav.dropdown {
 		}
 
 		h4 {
-			font-family: 'Open Sans', sans-serif;
-			font-weight: 400; //regular
-			font-size: 16px;
+			font: {
+				family: 'Open Sans', sans-serif;
+				size: 16px;
+				weight: 400; /*regular*/
+			}
 
 			&:after {
 				margin: 30px 0;
-				content: "";
-				width: 30px;
 				display: block;
+				width: 30px;
 				border-top: 1px black solid;
+				content: "";
 
 				@media #{$down1265}{
 					margin: 15px 0;
@@ -775,9 +893,15 @@ nav.dropdown {
 				}	
 
 				a {
+					display: -webkit-inline-box;
+					display: -ms-inline-flexbox;
 					display: inline-flex;
-					justify-content: center;
-					align-items: center;
+					-webkit-box-pack: center;
+					    -ms-flex-pack: center;
+					        justify-content: center;
+					-webkit-box-align: center;
+					    -ms-flex-align: center;
+					        align-items: center;
 					width: 100%;
 					height: 100%;
 
@@ -791,8 +915,8 @@ nav.dropdown {
 
 				&.active {
 					a {
-						color: $lightElementsColor;					
 						background-color: $darkElementsColor;
+						color: $lightElementsColor;		
 						-webkit-transition: background-color 0.3s; 
 						transition: background-color 0.3s;
 
@@ -807,9 +931,15 @@ nav.dropdown {
 
 		& > a {
 			margin-right: 30px;
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
 			display: inline-flex;
-			justify-content: center;
-			align-items: center;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
 			height: 50px;
 			width: 170px;
 			border: {
@@ -836,7 +966,7 @@ nav.dropdown {
 			}				
 
 			@media #{$down1265}{
-					margin: 0 15px 0 0;
+				margin: 0 15px 0 0;
 			}
 			@media #{$down460}{
 				margin-top: 10px;
@@ -854,13 +984,16 @@ nav.dropdown {
 			margin: 0 4px;
 			width: 12px;
 			height: 12px;
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
 			display: inline-flex;
 			background-color: $mediumElementsColor;
 			border-radius: 50%;
 			cursor: pointer;
 			
 			&.active {
-				box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+				        box-sizing: content-box;
 				width: 12px;
 				height: 12px;
 				border: 2px solid $accentsColor;
@@ -892,7 +1025,6 @@ nav.dropdown {
 
 		@media #{$down768}{
 			width: 390px;
-			// align-items: normal;
 		}
 
 		@media #{$down460}{
@@ -902,13 +1034,17 @@ nav.dropdown {
 
 	&__blog {
 		width: 5000px;
-		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+		-webkit-transition: -webkit-transform 0.8s ease-in;
+		transition: -webkit-transform 0.8s ease-in;
 		transition: transform 0.8s ease-in;
+		transition: transform 0.8s ease-in, -webkit-transform 0.8s ease-in;
 	}
 
 	&__item {
-		padding: 0 15px;		
 		float: left;
+		padding: 0 15px;		
 		height: auto;
 		width: 500px;
 
@@ -922,12 +1058,14 @@ nav.dropdown {
 		  	&:hover, &:focus {
 		  		text-decoration: underline;
 		  	}
-		 }
+		}
 	}
 
 	&__info {
-		display: inline-flex;
 		margin-bottom: 30px;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
 		font-size: 16px;
 
 		&__author::before {
@@ -955,10 +1093,11 @@ nav.dropdown {
 			padding: 20px 40px;
 			border: 1px solid $darkElementsColor;
 			color: $darkElementsColor;
-			font-family: 'Open Sans', sans-serif;
-			font-size: 16px;
-			font-weight: bold;
-
+			font: {
+				family: 'Open Sans', sans-serif;
+				size: 16px;
+				weight: bold;
+			}
 			text-transform: uppercase;
 
 			&:hover, &:focus {
@@ -978,10 +1117,15 @@ nav.dropdown {
 		left: 0;
 		right: 0;
 		max-width: 1300px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 		text-align: center;
-		align-self: center;
+		-ms-flex-item-align: center;
+		    align-self: center;
 		font-size: 50px;
 
 		@media #{$down1265}{
@@ -1006,10 +1150,19 @@ nav.dropdown {
 .subscribe {
 	margin-bottom: 0;
 	padding: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 250px;
 	color: $lightElementsColor;
 	background: {
@@ -1046,7 +1199,7 @@ nav.dropdown {
 	p {
 		margin-bottom: 30px;
 		font-family: 'Open Sans', sans-serif;
-		font-weight: 300; //light
+		font-weight: 300; /*light*/
 		letter-spacing: 0;
 		text-transform: uppercase;
 	}
@@ -1054,14 +1207,16 @@ nav.dropdown {
 	form {
 		display: inline-block;
 		@media #{$down768}{
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 		}
 	}
 
 	input {
+		padding-left: 80px;
 		height: 70px;
 		width: 770px;
-		padding-left: 80px;
 		border: 1px solid $lightElementsColor;
 		color: $lightElementsColor;
 		background: {
@@ -1070,9 +1225,12 @@ nav.dropdown {
 			repeat: no-repeat;
 			position: 30px center;
 		}
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300; //light
-		font-size: 13px;
+		font: {
+			family: 'Open Sans', sans-serif;
+			size: 13px;
+			weight: 300; /*light*/
+		}
+
 		text-transform: uppercase;
 
 		@media #{$down1265}{
@@ -1086,17 +1244,19 @@ nav.dropdown {
 		@media #{$down768}{
 			width: 100%;
 			min-width: 195px;
-			flex: 2;
+			-webkit-box-flex: 2;
+			    -ms-flex: 2;
+			        flex: 2;
 		}
 	}
 
-	button {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: bold;
-		text-transform: uppercase;
+	button {		
 		margin-left: 100px;
 		height: 70px;
 		width: 270px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
 
 		@media #{$down1265}{
 			margin-left: 50px;
@@ -1109,14 +1269,16 @@ nav.dropdown {
 		}
 
 		@media #{$down768}{
-			width: 100%;
 			padding: 10px;
-			flex: 1;
+			width: 100%;
+			-webkit-box-flex: 1;
+			    -ms-flex: 1;
+			        flex: 1;
 		}
 
 		&:hover {
-			background-color: rgba(0, 0, 0, 0.5);
 			border: 1px solid $lightElementsColor;
+			background-color: rgba(0, 0, 0, 0.5);
 			color: $lightElementsColor;
 			-webkit-transition: background-color 0.2s; 
 			transition: background-color 0.2s;
@@ -1127,11 +1289,17 @@ nav.dropdown {
 /* Footer */
 
 body > footer {
-	height: 160px;
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 160px;
 
 	@media #{$down920}{
 		height: 60px;

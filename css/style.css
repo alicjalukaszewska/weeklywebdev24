@@ -675,57 +675,64 @@ nav.dropdown {
             margin: 15px 0; } }
     .trendingItems__details p.tip {
       padding-top: 35px; }
-    .trendingItems__details ul.trendingItems__sizes {
+    .trendingItems__details .trendingItems__sizes {
       margin: 90px 0 30px; }
       @media only screen and (max-width: 1265px) {
-        .trendingItems__details ul.trendingItems__sizes {
+        .trendingItems__details .trendingItems__sizes {
           margin-top: 30px; } }
       @media only screen and (max-width: 460px) {
-        .trendingItems__details ul.trendingItems__sizes {
+        .trendingItems__details .trendingItems__sizes {
           margin: 25px 0 15px;
           text-align: center; } }
-      .trendingItems__details ul.trendingItems__sizes li {
+      .trendingItems__details .trendingItems__sizes label {
         margin-right: 30px;
-        display: inline-block;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         height: 50px;
         width: 70px;
         border-style: solid;
         border-color: #333333;
         border-width: 1px;
+        color: #333333;
         -webkit-transition: background-color 0.3s;
-        transition: background-color 0.3s; }
+        transition: background-color 0.3s;
+        cursor: pointer; }
         @media only screen and (max-width: 768px) {
-          .trendingItems__details ul.trendingItems__sizes li {
+          .trendingItems__details .trendingItems__sizes label {
             margin: 0 10px; } }
         @media only screen and (max-width: 460px) {
-          .trendingItems__details ul.trendingItems__sizes li {
+          .trendingItems__details .trendingItems__sizes label {
             margin: 0 5px;
             height: 50px;
             width: 50px; } }
-        .trendingItems__details ul.trendingItems__sizes li a {
-          display: -webkit-inline-box;
-          display: -ms-inline-flexbox;
-          display: inline-flex;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          width: 100%;
-          height: 100%; }
-          .trendingItems__details ul.trendingItems__sizes li a:hover, .trendingItems__details ul.trendingItems__sizes li a:focus {
-            background-color: #333333;
-            color: #ffffff;
-            -webkit-transition: background-color 0.3s;
-            transition: background-color 0.3s; }
-        .trendingItems__details ul.trendingItems__sizes li.active a {
-          background-color: #333333;
+        .trendingItems__details .trendingItems__sizes label:hover, .trendingItems__details .trendingItems__sizes label:focus {
+          background-color: #878787;
           color: #ffffff;
           -webkit-transition: background-color 0.3s;
           transition: background-color 0.3s; }
-          .trendingItems__details ul.trendingItems__sizes li.active a:hover, .trendingItems__details ul.trendingItems__sizes li.active a:focus {
-            background-color: #333333; }
+      .trendingItems__details .trendingItems__sizes input {
+        position: absolute;
+        margin-top: -200px;
+        /* opacity: 0;*/ }
+      .trendingItems__details .trendingItems__sizes input:checked + label {
+        background-color: #333333;
+        color: #ffffff;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s; }
+      .trendingItems__details .trendingItems__sizes input:checked + label:hover, .trendingItems__details .trendingItems__sizes input:checked + label:hover {
+        background-color: #878787;
+        color: #ffffff;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s; }
     .trendingItems__details > a {
       margin-right: 30px;
       display: -webkit-inline-box;

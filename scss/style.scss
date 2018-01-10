@@ -859,8 +859,9 @@ nav.dropdown {
 			padding-top: 35px;
 		}
 
-		ul.trendingItems__sizes {
+		.trendingItems__sizes {
 			margin: 90px 0 30px;
+			
 			@media #{$down1265}{
 				margin-top: 30px;
 			}
@@ -870,9 +871,19 @@ nav.dropdown {
 				text-align: center;
 			}	
 
-			li {
+			label {
 				margin-right: 30px;
-				display: inline-block;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
+				display: inline-flex;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
 				height: 50px;
 				width: 70px;
 				border : {
@@ -880,8 +891,10 @@ nav.dropdown {
 					color: $darkElementsColor;
 					width: 1px;
 				}
+				color: $darkElementsColor;
 				-webkit-transition: background-color 0.3s; 
 				transition: background-color 0.3s;
+				cursor: pointer;
 				@media #{$down768}{
 					margin: 0 10px;
 				}	
@@ -891,40 +904,32 @@ nav.dropdown {
 					width: 50px;
 				}	
 
-				a {
-					display: -webkit-inline-box;
-					display: -ms-inline-flexbox;
-					display: inline-flex;
-					-webkit-box-pack: center;
-					    -ms-flex-pack: center;
-					        justify-content: center;
-					-webkit-box-align: center;
-					    -ms-flex-align: center;
-					        align-items: center;
-					width: 100%;
-					height: 100%;
-
-					&:hover, &:focus {
-						background-color: $darkElementsColor;
-						color: $lightElementsColor;
-						-webkit-transition: background-color 0.3s; 
-						transition: background-color 0.3s;
-					}
+				&:hover, &:focus{
+				background-color: $mediumElementsColor;
+			    color: $lightElementsColor;
+				-webkit-transition: background-color 0.3s; 
+				transition: background-color 0.3s;
 				}
+			}
 
-				&.active {
-					a {
-						background-color: $darkElementsColor;
-						color: $lightElementsColor;		
-						-webkit-transition: background-color 0.3s; 
-						transition: background-color 0.3s;
+			input {
+				position: absolute;
+				margin-top: -200px;
+				/* opacity: 0;*/
+			}
 
-						&:hover, &:focus {
-							background-color: $darkElementsColor;
-
-						}
-					}
-				}
+			input:checked + label {
+			    background-color: $darkElementsColor;
+			    color: #ffffff;
+				-webkit-transition: background-color 0.3s; 
+				transition: background-color 0.3s;
+			}
+			
+			input:checked + label:hover, input:checked + label:hover{
+			    background-color: $mediumElementsColor;
+			    color: $lightElementsColor;
+				-webkit-transition: background-color 0.3s; 
+				transition: background-color 0.3s;
 			}
 		}
 

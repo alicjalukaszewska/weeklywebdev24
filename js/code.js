@@ -1,3 +1,5 @@
+(function(){
+'use strict';
 
 /* Fixed navbar styling */
 
@@ -42,7 +44,7 @@ function getItemPosition () {
 	})
 	//change content position
 	for(let i = 0; i < links.length; i++) {
-		position = currentWidth * i;
+		let position = currentWidth * i;
 		links[i].dataset.pos = `-${position}px`;
 	} 
 }
@@ -172,9 +174,15 @@ const menu = document.querySelector('nav.dropdown');
 dropdownBtn.addEventListener('click', () => menu.classList.toggle('dropped'));
 dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
 
+//hide dropdown when window is wider than 920px
+let screenMediaQuery = window.matchMedia("only screen and (min-width: 920px)");
+screenMediaQuery.addListener(screenTest);
 
-window.addEventListener('resize', () => {
-	if (window.innerWidth >= 920){
+function screenTest (e) {
+	if (e.matches){
 		menu.classList.remove('dropped');
 	}
-})
+}
+
+
+}());

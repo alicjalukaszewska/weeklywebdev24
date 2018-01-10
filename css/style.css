@@ -210,6 +210,7 @@ nav.dropdown {
   transform: scale(0.8) rotate(0deg);
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
+  background: transparent;
   cursor: pointer; }
   #nav-icon span {
     display: block;
@@ -335,7 +336,7 @@ nav.dropdown {
     color: #ffffff;
     font-weight: 900;
     text-transform: uppercase; }
-    .mainHeader a.shop:hover {
+    .mainHeader a.shop:hover, .mainHeader a.shop:focus {
       background-color: rgba(255, 255, 255, 0.8);
       color: #333333;
       -webkit-transition: background-color 0.5s;
@@ -367,12 +368,12 @@ nav.dropdown {
     @media only screen and (max-width: 768px) {
       .latestProducts__collections > div, .latestProducts__currentSales > div {
         background-position: center 40%; } }
-  .latestProducts__collections > div:hover, .latestProducts__currentSales > div:hover {
+  .latestProducts__collections > div:hover, .latestProducts__collections > div:focus, .latestProducts__currentSales > div:hover, .latestProducts__currentSales > div:focus {
     background-size: 105%;
     -webkit-transition: background-size 0.4s ease-in;
     transition: background-size 0.4s ease-in; }
     @media only screen and (max-width: 1265px) {
-      .latestProducts__collections > div:hover, .latestProducts__currentSales > div:hover {
+      .latestProducts__collections > div:hover, .latestProducts__collections > div:focus, .latestProducts__currentSales > div:hover, .latestProducts__currentSales > div:focus {
         background-size: cover; } }
 
 .latestProducts__product {
@@ -440,11 +441,12 @@ nav.dropdown {
         .latestProducts__product a p {
           font-size: 12px;
           padding: 1em; } }
-    .latestProducts__product a:hover {
+    .latestProducts__product a:hover, .latestProducts__product a:focus {
       top: -40px;
       -webkit-transition: top 0.6s ease;
-      transition: top 0.6s ease; }
-      .latestProducts__product a:hover p {
+      transition: top 0.6s ease;
+      outline: none; }
+      .latestProducts__product a:hover p, .latestProducts__product a:focus p {
         bottom: 20px;
         -webkit-transition: bottom 0.6s ease;
         transition: bottom 0.6s ease;
@@ -452,7 +454,7 @@ nav.dropdown {
         -webkit-transition: opacity 0.6s;
         transition: opacity 0.6s; }
         @media only screen and (max-width: 920px) {
-          .latestProducts__product a:hover p {
+          .latestProducts__product a:hover p, .latestProducts__product a:focus p {
             bottom: 5px; } }
   .latestProducts__product.man-collection {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7))), url("../img/man.jpg");
@@ -541,14 +543,14 @@ nav.dropdown {
       transition: -webkit-transform 0.4s ease-in;
       transition: transform 0.4s ease-in;
       transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in; }
-    .latestProducts__sales a:hover:before {
+    .latestProducts__sales a:hover:before, .latestProducts__sales a:focus:before {
       -webkit-transform: translateX(40px) scale(1.2, 1);
       transform: translateX(40px) scale(1.2, 1);
       -webkit-transition: -webkit-transform 0.4s ease-in;
       transition: -webkit-transform 0.4s ease-in;
       transition: transform 0.4s ease-in;
       transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in; }
-    .latestProducts__sales a:hover:after {
+    .latestProducts__sales a:hover:after, .latestProducts__sales a:focus:after {
       -webkit-transform: translateX(-40px) scale(1.2, 1);
       transform: translateX(-40px) scale(1.2, 1);
       -webkit-transition: -webkit-transform 0.4s ease-in;
@@ -559,6 +561,7 @@ nav.dropdown {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7))), url("../img/autumn.jpg");
     background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/autumn.jpg"); }
   .latestProducts__sales.spirit-collection {
+    text-transform: uppercase;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7))), url("../img/spirit.jpg");
     background-image: linear-gradient(rgba(34, 37, 51, 0.7), rgba(34, 37, 51, 0.7)), url("../img/spirit.jpg"); }
 
@@ -945,6 +948,15 @@ nav.dropdown {
     font-weight: 300;
     /*light*/
     text-transform: uppercase; }
+    .subscribe input::-webkit-input-placeholder {
+      color: #ffffff; }
+    .subscribe input:-ms-input-placeholder {
+      color: #ffffff; }
+    .subscribe input::-ms-input-placeholder {
+      color: #ffffff; }
+    .subscribe input::placeholder {
+      opacity: 1;
+      color: #ffffff; }
     @media only screen and (max-width: 1265px) {
       .subscribe input {
         width: 560px; } }
@@ -964,7 +976,8 @@ nav.dropdown {
     width: 270px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    cursor: pointer; }
     @media only screen and (max-width: 1265px) {
       .subscribe button {
         margin-left: 50px;

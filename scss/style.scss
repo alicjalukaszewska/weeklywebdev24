@@ -225,10 +225,6 @@ nav.dropdown {
 					        justify-content: center;
 					width: 100%;
 					height: 100%;
-
-					&:hover, &:focus {
-					}
-
 				}
 			}
 		}
@@ -249,6 +245,7 @@ nav.dropdown {
 	transform: scale(0.8) rotate(0deg);
 	-webkit-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
+	background: transparent;
 	cursor: pointer;
 	
 	span {
@@ -412,7 +409,7 @@ nav.dropdown {
 		font-weight: 900;
 		text-transform: uppercase;
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: $transparent80percent;
 			color: $darkElementsColor;
 			-webkit-transition: background-color 0.5s; 
@@ -456,7 +453,7 @@ nav.dropdown {
 			}
 		}
 
-		& > div:hover {
+		& > div:hover, & > div:focus {
 			background-size: 105%;
 			-webkit-transition: background-size 0.4s ease-in;
 			transition: background-size 0.4s ease-in;
@@ -538,10 +535,11 @@ nav.dropdown {
 				}
 			}
 
-			&:hover {
+			&:hover, &:focus {
 				top: -40px;
 				-webkit-transition: top 0.6s ease;
 				transition: top 0.6s ease;
+				outline: none;
 
 				p {
 					bottom: 20px;
@@ -672,7 +670,7 @@ nav.dropdown {
 				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			}
 
-			&:hover:before {
+			&:hover:before, &:focus:before {
 				-webkit-transform: translateX(40px) scale(1.2, 1);
 				        transform: translateX(40px) scale(1.2, 1);
 				-webkit-transition: -webkit-transform 0.4s ease-in;
@@ -681,7 +679,7 @@ nav.dropdown {
 				transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 			} 
 
-			&:hover:after {
+			&:hover:after, &:focus:after {
 				-webkit-transform: translateX(-40px) scale(1.2, 1);
 				        transform: translateX(-40px) scale(1.2, 1);
 				-webkit-transition: -webkit-transform 0.4s ease-in;
@@ -702,6 +700,7 @@ nav.dropdown {
 					url('../img/autumn.jpg'); 
 		}
 		&.spirit-collection {
+			text-transform: uppercase;
 			background-image:
 					-webkit-gradient(linear, left top, left bottom, from($gradientOverlay)), 
 					url('../img/spirit.jpg');
@@ -1230,8 +1229,24 @@ nav.dropdown {
 			size: 13px;
 			weight: 300; /*light*/
 		}
-
 		text-transform: uppercase;
+
+		&::-webkit-input-placeholder {
+			color: $lightElementsColor;
+		}
+
+		&:-ms-input-placeholder {
+			color: $lightElementsColor;
+		}
+
+		&::-ms-input-placeholder {
+			color: $lightElementsColor;
+		}
+
+		&::placeholder {
+			opacity: 1;
+			color: $lightElementsColor;
+		}
 
 		@media #{$down1265}{
 			width: 560px;
@@ -1257,6 +1272,7 @@ nav.dropdown {
 		font-family: 'Open Sans', sans-serif;
 		font-weight: bold;
 		text-transform: uppercase;
+		cursor: pointer;
 
 		@media #{$down1265}{
 			margin-left: 50px;

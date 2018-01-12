@@ -82,9 +82,9 @@ trendingItemSection.addEventListener('mouseover', function() {
 	showItem = 0;
 })
 
-// trendingItemSection.addEventListener('mouseout', function() {
-// 	showItem = setInterval(changeItemInTime, 5000);
-// })
+trendingItemSection.addEventListener('mouseout', function() {
+	showItem = setInterval(changeItemInTime, 5000);
+})
 
 
 /* Blog slider */

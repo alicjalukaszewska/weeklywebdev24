@@ -905,10 +905,10 @@ nav.dropdown {
 				}	
 
 				&:hover, &:focus{
-				background-color: $mediumElementsColor;
-			    color: $lightElementsColor;
-				-webkit-transition: background-color 0.3s; 
-				transition: background-color 0.3s;
+					background-color: $mediumElementsColor;
+				    color: $lightElementsColor;
+					-webkit-transition: background-color 0.3s; 
+					transition: background-color 0.3s;
 				}
 			}
 

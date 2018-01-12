@@ -17,12 +17,12 @@ window.addEventListener('scroll', changeMenu);
 
 /* Trending Items slider */
 
-const links = document.querySelectorAll('.chooseItem li');
+const links = document.querySelectorAll('.chooseItem button');
 const trendingItemSection = document.querySelector('.trendingItems');
 const offsetContentDiv = document.querySelector('.trendingItems__itemsContainer');
 const content = document.querySelectorAll('.content');
 const currentItemWrapper = document.querySelector('.trendingItems__item');
-let active = document.querySelector('.chooseItem li.active');
+let active = document.querySelector('.chooseItem button.active');
 let showItem;
 
 function resetActiveItem () {

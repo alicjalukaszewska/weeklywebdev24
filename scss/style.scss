@@ -165,7 +165,7 @@ section {
 			width: 100%;
 		}
 		@media #{$down768}{
-			padding: 20px
+			padding: 20px;
 		}
 	}
 
@@ -286,7 +286,6 @@ nav.dropdown {
 
 	&.dropped {
 		position: fixed;
-		display: block;
 		margin-top: -90px;
 		background-color: rgba(0, 0, 0, 0.95);
 		width: 100%;
@@ -489,7 +488,7 @@ nav.dropdown {
 			background: {
 				repeat: no-repeat; 
 				position: center center;
-				size: 100%;
+				size: 102%;
 			}
 			-webkit-transition: background-size 0.4s ease-in;
 			transition: background-size 0.4s ease-in;
@@ -1067,6 +1066,7 @@ nav.dropdown {
 		}
 	}
 }
+
 
 /* Blog Preview */
 
